@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/css/style.css">
+    <title>PECesur</title>
+</head>
+
+<body>
+    <img src="./static/img/cesurme.jpg" alt="Cesur Málaga Este" id="backgroundIMG">
+
+    <header>
+        <img src="./static/img/logo/logoPEC.png" alt="Logo PECesur">
+        <div>
+            <h1>Bienvenido al portal PECesur</h1>
+            <p>Desde aquí, podrás gestionar toda la información de las prácticas externas (Dual y FCT) tanto si eres alumno
+                como profesor</p>
+        </div>
+    </header>
+    <main id="heroIndex">
+
+        <section>
+            <h3>Si eres profesor</h3>
+            <form action="#" method="POST" id="profeForm">
+                <label for="emailP">Correo electrónico</label>
+                <input type="text" id="emailP" name="emailProfesor">
+
+                <label for="passP">Contraseña</label>
+                <input type="password" id="passP" name="passwordProfesor">
+
+                <button type="button" onclick="validarProfesor()">Iniciar Sesión</button>
+                <p id="credencialesP"></p>
+            </form>
+
+        </section>
+        <section>
+            <h3>Si eres alumno</h3>
+            <form action="#" method="POST" id="aluForm">
+                <label for="emailA">Correo electrónico</label>
+                <input type="text" id="emailA" name="emailAlumno">
+
+                <label for="passA">Contraseña</label>
+                <input type="password" id="passA" name="passwordAlumno">
+
+                <button type="button" onclick="validarAlumno()">Iniciar Sesión</button>
+                <p id="credencialesA"></p>
+      
+            </form>
+
+        </section>
+    </main>
+
+    <script type="text/javascript" src="./static/js/app.js"></script>
+</body>
+
+</html>

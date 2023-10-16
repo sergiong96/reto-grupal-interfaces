@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/css/style.css">
+    <title>Portal Alumno</title>
+</head>
+
+<body>
+    <header>
+        <img src="./static/img/logo/logoPEC.png" alt="Logo PECesur">
+        <h1>Portal del Alumno</h1>
+    </header>
+    <main id="heroVistaAlumno">
+
+        <button id="añadirEntrada" onclick="añadirEntradaAlu()"><i class="fa-solid fa-plus"></i>Añadir entrada</button>
+
+        <div id="divAñadir">
+            <button type="button" onclick="cerrarForm()"><i class="fa-solid fa-x"></i></button>
+            <form action="#" method="POST">
+                <div>
+                    <label for="">Fecha</label>
+                    <input type="text">
+                </div>
+                <div>
+                    <label for="">Tipo de práctica</label>
+                    <input type="text">
+                </div>
+                <div>
+                    <label for="">Número horas</label>
+                    <input type="text">
+                </div>
+                <div>
+                    <label for="">Actividades realizadas</label>
+                    <input type="text">
+                </div>
+                <div>
+                    <label for="">Observaciones</label>
+                    <input type="text">
+                </div>
+                <button type="button" id="buttonAñadir">Añadir entrada</button>
+            </form>
+        </div>
+        <section id="seccionTabla">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Tipo de práctica</th>
+                        <th>Total horas/día</th>
+                        <th>Actividades realizadas</th>
+                        <th>Observaciones/incidencias</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>15/10/2023</td>
+                        <td>Dual</td>
+                        <td>7</td>
+                        <td>Maquetación con HTML y CSS</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>14/10/2023</td>
+                        <td>Dual</td>
+                        <td>7</td>
+                        <td>Formación online</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>13/10/2023</td>
+                        <td>Dual</td>
+                        <td>7</td>
+                        <td>Mantenimiento backend</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>12/10/2023</td>
+                        <td>Dual</td>
+                        <td>7</td>
+                        <td>Optimización SEO</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>11/10/2023</td>
+                        <td>Dual</td>
+                        <td>7</td>
+                        <td>Revisión código</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </section>
+    </main>
+
+    <script type="text/javascript" src="./static/js/app.js"></script>
+    <script src="https://kit.fontawesome.com/903082a171.js" crossorigin="anonymous"></script> <!--Fonts Awesome-->
+</body>
+
+</html>

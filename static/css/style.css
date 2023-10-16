@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import "./normalize.css";
+
+* {
+    font-family: 'Roboto', sans-serif;
+
+}
+
+/*INDEX*/
+header {
+    display: flex;
+}
+
+header div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+#backgroundIMG {
+    position: absolute;
+    opacity: 50%;
+    width: 100%;
+    height: 100%;
+    z-index: -999999;
+}
+
+#heroIndex {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3rem;
+}
+
+#heroIndex h3 {
+    text-align: center;
+}
+
+#heroIndex form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    background-color: #a8cda8;
+}
+
+#heroIndex form input {
+    margin-bottom: 1rem;
+}
+
+
+/*VISTA ALUMNO*/
+header h1{
+    margin: auto auto;
+}
+
+#seccionTabla {
+    display: flex;
+    justify-content: center;
+}
+
+#seccionTabla table {
+    border-collapse: collapse;
+}
+
+#seccionTabla table tr:nth-child(2n),
+#seccionTabla table thead {
+    background-color: lightgray;
+}
+
+#seccionTabla table td:nth-child(5n),
+#seccionTabla table td:nth-child(3n) {
+    text-align: center;
+}
+
+#seccionTabla th,
+td {
+    border: 1px solid black;
+    padding: 0.5rem 1rem;
+}
+
+
+#heroVistaAlumno #añadirEntrada {
+    margin: 1rem 70%;
+    width: 10rem;
+}
+
+
+#heroVistaAlumno #divAñadir {
+    overflow: hidden;
+    position: absolute;
+    left: 35%;
+    top: 30%;
+    width: 0;
+    height: 0;
+    transition: width 1s ease-in-out, height 1s ease-in-out, opacity 1s ease-in-out, background-color 1s ease-in-out;
+    border: 1px solid black;
+    opacity: 0;
+    padding: 1rem;
+}
+
+#heroVistaAlumno #divAñadir>button {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#heroVistaAlumno #divAñadir #buttonAñadir {
+    margin-top: 1rem;
+}
+
+#heroVistaAlumno #divAñadir.active {
+    width: 25rem;
+    height: 10rem;
+    transition: width 1s ease-in-out, height 1s ease-in-out, opacity 1s ease-in-out, background-color 1s ease-in-out;
+    background-color: #a8cda8;
+    opacity: 1;
+}
+
+#heroVistaAlumno #divAñadir form {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+}
+
+#heroVistaAlumno #divAñadir form div {
+    display: inline-block;
+}
+
+#heroVistaAlumno #divAñadir form div input {
+    width: 12rem;
+}
+
+#heroVistaAlumno #divAñadir form div label {
+    display: inline-block;
+    width: 10rem;
+}
+
+
+
+/*VISTA PROFESOR*/
