@@ -1,6 +1,4 @@
-# reto-grupal-interfaces
-HACER:
-
+# HACER:
 Vista alumno:
 Editar registro, información de la empresa, información del tutor
 
