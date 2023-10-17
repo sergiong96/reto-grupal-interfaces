@@ -73,8 +73,7 @@ header h1{
     background-color: lightgray;
 }
 
-#seccionTabla table td:nth-child(5n),
-#seccionTabla table td:nth-child(3n) {
+#seccionTabla table td {
     text-align: center;
 }
 

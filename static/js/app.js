@@ -73,10 +73,37 @@ function borrarRegistro() {
     let checkBoxs = document.querySelectorAll("input[type='checkbox']");
     for (let i = 0; i < checkBoxs.length; i++) {
         if (checkBoxs[i].checked) {
-            let idBorrar = document.getElementById(checkBoxs[i].id + "tr");
-            idBorrar.remove();
+            let filaBorrar = document.getElementById(checkBoxs[i].id + "tr");
+            filaBorrar.remove();
         }
 
     }
 
+}
+
+function editarRegistro() {
+    let checkBoxs = document.querySelectorAll("input[type='checkbox']");
+    for (let i = 0; i < checkBoxs.length; i++) {
+        if (checkBoxs[i].checked) {
+            let filaActualizar = document.getElementById(checkBoxs[i].id + "tr");
+
+            for (let j = 0; j < filaActualizar.childNodes.length; j++) {
+                if (filaActualizar.childNodes[j].nodeName === "#text") {
+                    filaActualizar.childNodes[j].remove();
+                }
+            }
+            //CONTINUAR, NODELIST LIMPIA DE TEXTO. FALTA CREAR UN DIV, INSERTARLE UN FORM, A ESTE INSERTARLE INPUTS CON LOS VALORES DE LA FILA SELECCIONADA Y ACTUALIZAR
+            let div = document.createElement("div");
+            let form = document.createElement("form");
+            div.className = "divActualizar";
+
+
+            for (let i = 1; i < filaActualizar.childNodes.length; i++) {
+                let input = document.createElement("input");
+                input.innerText = filaActualizar.childNodes[i].innerText;
+                form.appendChild(input);
+            }
+            div.appendChild(form);
+        }
+    }
 }
