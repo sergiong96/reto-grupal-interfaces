@@ -52,10 +52,12 @@ header div {
 
 
 /*VISTA ALUMNO*/
-header h1 {
+#headerAlumno h1 {
     margin: auto auto;
 }
-
+#headerAlumno img{
+    width: 10rem;
+}
 /* #seccionTabla {
     display: table;
     margin: 0 auto;
