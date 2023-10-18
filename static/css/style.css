@@ -52,7 +52,7 @@ header div {
 
 
 /*VISTA ALUMNO*/
-header h1{
+header h1 {
     margin: auto auto;
 }
 
@@ -84,15 +84,15 @@ td {
 }
 
 
- #heroVistaAlumno #botonesEdicion {
+#heroVistaAlumno #botonesEdicion {
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 1rem;
 }
 
 
-#heroVistaAlumno #botonesEdicion>div{
-    margin:0 17rem 0 0;
+#heroVistaAlumno #botonesEdicion>div {
+    margin: 0 17rem 0 0;
 }
 
 #heroVistaAlumno #divAñadir {
@@ -109,7 +109,7 @@ td {
     z-index: 150;
 }
 
-#heroVistaAlumno #divAñadir>button {
+#heroVistaAlumno #divAñadir>button, #heroVistaAlumno #divActualizar button:nth-child(1) {
     position: absolute;
     right: 0;
     top: 0;
@@ -146,16 +146,15 @@ td {
     width: 10rem;
 }
 
-#opacar{
+#opacar {
     display: none;
     width: 0;
     height: 0;
-    opacity: 0%;
-    transition: opacity 1s ease-in-out;
+    opacity: 0;
+    transition: opacity 800ms ease-in-out;
 }
 
-#opacar.active{
-    display: block;
+#opacar.active {
     position: absolute;
     top: 0;
     left: 0;
@@ -164,7 +163,41 @@ td {
     height: 100%;
     opacity: 60%;
     z-index: 100;
-    transition: opacity 1s ease-in-out;
-} 
+    transition: opacity 800ms ease-in-out;
+}
+
+
+#heroVistaAlumno #divActualizar {
+    display: none;
+    position: absolute;
+    top: 30%;
+    left: 43%;
+    z-index: 9999;
+    background-color: #a8cda8;
+    opacity: 0;
+    transition: opacity 800ms ease-in-out;
+}
+
+.block{
+    display: block !important;
+}
+
+#heroVistaAlumno #divActualizar.active{
+    opacity: 1;
+    transition: opacity 800ms ease-in-out;
+}
+
+#heroVistaAlumno #divActualizar form {
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    padding: 2rem;
+}
+
+#heroVistaAlumno #divActualizar form input:nth-child(5) {
+    margin-bottom: 1rem;
+}
+
+
 
 /*VISTA PROFESOR*/

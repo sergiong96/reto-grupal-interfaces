@@ -25,18 +25,23 @@ function validarAlumno() {
 }
 
 
-function añadirEntradaAlu() {
+function abrirAñadirEntradaAlu() {
     const divFormAñadir = document.getElementById("divAñadir");
     const divOpacar = document.getElementById("opacar");
 
     if (!divFormAñadir.classList.contains("active") && !divOpacar.classList.contains("active")) {
         divFormAñadir.classList.add("active");
-        divOpacar.classList.add("active");
+
+        divOpacar.classList.add("block");
+        setTimeout(() => {
+            divOpacar.classList.add("active");
+        }, 0);
+
     }
 
 }
 
-function cerrarForm() {
+function cerrarFormAñadir() {
     const divFormAñadir = document.getElementById("divAñadir");
     const divOpacar = document.getElementById("opacar");
     if (divFormAñadir.classList.contains("active") && divOpacar.classList.contains("active")) {
@@ -46,20 +51,30 @@ function cerrarForm() {
 }
 
 
-function insertarEntrada() {
+function añadirEntradaAluFinal() {
     let fecha = document.getElementById("fechaIn").value;
     let tipo = document.getElementById("tipoIn").value;
     let horas = document.getElementById("horasIn").value;
     let actividades = document.getElementById("activIn").value;
     let observaciones = document.getElementById("obserIn").value;
+    let idTrAnterior = document.querySelector("tbody tr");
+    idTrAnterior = parseInt(idTrAnterior.id.substring(1, 2));
+    let inputCheck = document.createElement("input");
+    inputCheck.type = "checkbox";
+    inputCheck.id = "R" + parseInt(idTrAnterior + 1);
 
     let arrayInsert = [fecha, tipo, horas, actividades, observaciones];
 
     const elementoInsertar = document.getElementById("cuerpoTabla");
     let tr = document.createElement("tr");
+    tr.id = inputCheck.id + "tr";
+
+    let td = document.createElement("td");
+    td.appendChild(inputCheck);
+    tr.appendChild(td);
 
     for (let i = 0; i < arrayInsert.length; i++) {
-        let td = document.createElement("td");
+        td = document.createElement("td");
         td.innerText = arrayInsert[i];
         tr.appendChild(td);
     }
@@ -81,29 +96,65 @@ function borrarRegistro() {
 
 }
 
-function editarRegistro() {
+function abrirEditarRegAlu() {
     let checkBoxs = document.querySelectorAll("input[type='checkbox']");
+    const formActualizar = document.getElementById("formActualizar");
+    formActualizar.innerHTML = "";
+    const divOpacar = document.getElementById("opacar");
+    const buttonActualizar = document.createElement("button");
+    buttonActualizar.innerText = "Actualizar registro";
+    let filaActualizar;
+
     for (let i = 0; i < checkBoxs.length; i++) {
         if (checkBoxs[i].checked) {
-            let filaActualizar = document.getElementById(checkBoxs[i].id + "tr");
+            filaActualizar = document.getElementById(checkBoxs[i].id + "tr");
 
             for (let j = 0; j < filaActualizar.childNodes.length; j++) {
                 if (filaActualizar.childNodes[j].nodeName === "#text") {
                     filaActualizar.childNodes[j].remove();
                 }
             }
-            //CONTINUAR, NODELIST LIMPIA DE TEXTO. FALTA CREAR UN DIV, INSERTARLE UN FORM, A ESTE INSERTARLE INPUTS CON LOS VALORES DE LA FILA SELECCIONADA Y ACTUALIZAR
-            let div = document.createElement("div");
-            let form = document.createElement("form");
-            div.className = "divActualizar";
-
-
-            for (let i = 1; i < filaActualizar.childNodes.length; i++) {
-                let input = document.createElement("input");
-                input.innerText = filaActualizar.childNodes[i].innerText;
-                form.appendChild(input);
-            }
-            div.appendChild(form);
         }
     }
+
+    for (let i = 1; i < filaActualizar.childNodes.length; i++) {
+        let input = document.createElement("input");
+        input.value = filaActualizar.childNodes[i].innerText;
+        formActualizar.appendChild(input);
+    }
+
+    buttonActualizar.setAttribute("onclick", "editarRegAluFinal()");
+
+    formActualizar.appendChild(buttonActualizar);
+
+    if (!divOpacar.classList.contains("active")) {
+        divOpacar.classList.add("block");
+        setTimeout(() => {
+            divOpacar.classList.add("active");
+        }, 0);
+    }
+
+    divActualizar.classList.add("block");
+
+    setTimeout(() => {
+        divActualizar.classList.add("active");
+    }, 0);
+
+}
+
+
+function cerrarFormReg() {
+    const divActualizar = document.getElementById("divActualizar");
+    const divOpacar = document.getElementById("opacar");
+
+    if (divActualizar.classList.contains("active") && divOpacar.classList.contains("active")) {
+        divActualizar.classList = "";
+        divOpacar.classList = "";
+    }
+}
+
+function editarRegAluFinal() {
+    let inputsActualizar = document.querySelectorAll("#formActualizar input");
+    console.log(inputsActualizar);
+
 }

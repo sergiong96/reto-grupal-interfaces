@@ -16,8 +16,9 @@
     <main id="heroVistaAlumno">
 
         <div id="opacar"></div>
+        
         <div id="divAñadir">
-            <button type="button" onclick="cerrarForm()"><i class="fa-solid fa-x"></i></button>
+            <button type="button" onclick="cerrarFormAñadir()"><i class="fa-solid fa-x"></i></button>
             <form action="#" method="POST">
                 <div>
                     <label for="fechaIn">Fecha</label>
@@ -39,16 +40,26 @@
                     <label for="obserIn">Observaciones</label>
                     <input type="text" id="obserIn">
                 </div>
-                <button type="button" id="buttonAñadir" onclick="insertarEntrada()">Añadir entrada</button>
+                <button type="button" id="buttonAñadir" onclick="añadirEntradaAluFinal()">Añadir entrada</button>
             </form>
         </div>
+
+        <div id="divActualizar">
+            <button type="button" onclick="cerrarFormReg()"><i class="fa-solid fa-x"></i></button>
+            <form action="#" method="POST" id="formActualizar">
+            </form>
+        </div>
+
         <section id="seccionTabla">
             <div id="botonesEdicion">
                 <div>
-                    <button type="button" title="Eliminar registro seleccionado" onclick="borrarRegistro()"><i class="fa-solid fa-trash-can"></i></button>
-                    <button type="button" title="Editar registro seleccionado" onclick="editarRegistro()"><i class="fa-solid fa-pencil"></i></button>
+                    <button type="button" title="Eliminar registro seleccionado" onclick="borrarRegistro()"><i
+                            class="fa-solid fa-trash-can"></i></button>
+                    <button type="button" title="Editar registro seleccionado" onclick="abrirEditarRegAlu()"><i
+                            class="fa-solid fa-pencil"></i></button>
                 </div>
-                <button id="añadirEntrada" onclick="añadirEntradaAlu()"><i class="fa-solid fa-plus"></i>Añadir entrada</button>
+                <button id="añadirEntrada" onclick="abrirAñadirEntradaAlu()"><i class="fa-solid fa-plus"></i>Añadir
+                    entrada</button>
             </div>
             <table>
                 <thead>
