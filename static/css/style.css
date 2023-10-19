@@ -52,17 +52,13 @@ header div {
 
 
 /*VISTA ALUMNO*/
-#headerAlumno h1 {
+#headerAlumno h1, #headerProfesor h1 {
     margin: auto auto;
 }
-#headerAlumno img{
+
+#headerAlumno img, #headerProfesor img {
     width: 10rem;
 }
-/* #seccionTabla {
-    display: table;
-    margin: 0 auto;
-    width: 50%;
-} */
 
 #seccionTabla table {
     border-collapse: collapse;
@@ -80,7 +76,7 @@ header div {
 }
 
 #seccionTabla th,
-td {
+#seccionTabla td {
     border: 1px solid black;
     padding: 0.5rem 1rem;
 }
@@ -98,6 +94,7 @@ td {
 }
 
 #heroVistaAlumno #divAñadir {
+    display: none;
     overflow: hidden;
     position: absolute;
     left: 35%;
@@ -111,7 +108,8 @@ td {
     z-index: 150;
 }
 
-#heroVistaAlumno #divAñadir>button, #heroVistaAlumno #divActualizar button:nth-child(1) {
+#heroVistaAlumno #divAñadir>button,
+#heroVistaAlumno #divActualizar button:nth-child(1) {
     position: absolute;
     right: 0;
     top: 0;
@@ -180,11 +178,11 @@ td {
     transition: opacity 800ms ease-in-out;
 }
 
-.block{
+.block {
     display: block !important;
 }
 
-#heroVistaAlumno #divActualizar.active{
+#heroVistaAlumno #divActualizar.active {
     opacity: 1;
     transition: opacity 800ms ease-in-out;
 }
@@ -200,6 +198,47 @@ td {
     margin-bottom: 1rem;
 }
 
+#heroVistaAlumno #horas,
+#heroVistaAlumno #infoEmpresa,
+#heroVistaAlumno #infoTutor {
+    display: flex;
+    flex-direction: column;
+    margin: 5rem 0;
+    align-items: center;
+}
 
+#heroVistaAlumno #horas div {
+    display: flex;
+    justify-content: center;
+
+}
+
+#heroVistaAlumno #horas div article {
+    margin: 0 2rem;
+}
+
+#heroVistaAlumno #infoEmpresa {}
+
+#heroVistaAlumno #infoTutor {}
 
 /*VISTA PROFESOR*/
+
+
+#heroVistaProfesor #tablaAlumnos img{
+    width: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

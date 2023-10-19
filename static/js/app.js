@@ -31,7 +31,11 @@ function abrirAñadirEntradaAlu() {
     const divOpacar = document.getElementById("opacar");
 
     if (!divFormAñadir.classList.contains("active") && !divOpacar.classList.contains("active")) {
-        divFormAñadir.classList.add("active");
+        divFormAñadir.classList.add("block");
+        setTimeout(() => {
+            divFormAñadir.classList.add("active");
+        }, 0);
+
 
         divOpacar.classList.add("block");
         setTimeout(() => {
@@ -46,8 +50,8 @@ function cerrarFormAñadir() {
     const divOpacar = document.getElementById("opacar");
 
     if (divFormAñadir.classList.contains("active") && divOpacar.classList.contains("active")) {
-        divFormAñadir.classList.remove("active");
-        divOpacar.classList.remove("active");
+        divFormAñadir.classList = "";
+        divOpacar.classList = "";
     }
 }
 
@@ -170,15 +174,9 @@ function editarRegAluFinal() {
 
     contador = 0;
 
-    for (let i=1; i<filaActualizarOk.childNodes.length;i++){
+    for (let i = 1; i < filaActualizarOk.childNodes.length; i++) {
         filaActualizarOk.childNodes[i].textContent = valuesInputs[contador];
         contador++;
     }
-    // for (let valor of filaActualizarOk.childNodes) {
-    //     console.log(valor);
-       
-
-    // }
-
 
 }

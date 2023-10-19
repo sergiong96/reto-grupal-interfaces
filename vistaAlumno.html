@@ -17,7 +17,7 @@
 
         <div id="opacar"></div>
 
-        <div id="divAñadir">
+        <section id="divAñadir">
             <button type="button" onclick="cerrarFormAñadir()"><i class="fa-solid fa-x"></i></button>
             <form action="#" method="POST">
                 <div>
@@ -42,13 +42,13 @@
                 </div>
                 <button type="button" id="buttonAñadir" onclick="añadirEntradaAluFinal()">Añadir entrada</button>
             </form>
-        </div>
+        </section>
 
-        <div id="divActualizar">
+        <section id="divActualizar">
             <button type="button" onclick="cerrarFormReg()"><i class="fa-solid fa-x"></i></button>
             <form action="#" method="POST">
             </form>
-        </div>
+        </section>
 
         <section id="seccionTabla">
             <div id="botonesEdicion">
@@ -119,9 +119,106 @@
         </section>
 
 
-        <section id="horas"></section>
-        <section id="infoEmpresa"></section>
-        <section id="infoTutor"></section>
+        <section id="horas">
+            <h2>Horas de prácticas:</h2>
+            <div>
+                <article>
+                    <p>DUAL</p>
+                    <table>
+                        <tr>
+                            <th>Horas realizadas</th>
+                            <th>Horas pendientes</th>
+                            <th>Total horas</th>
+                        </tr>
+                        <tr>
+                            <td>60</td>
+                            <td>100</td>
+                            <td>160</td>
+                        </tr>
+                    </table>
+                </article>
+                <article>
+                    <p>FCT</p>
+                    <table>
+                        <tr>
+                            <th>Horas realizadas</th>
+                            <th>Horas pendientes</th>
+                            <th>Total horas</th>
+                        </tr>
+                        <tr>
+                            <td>60</td>
+                            <td>100</td>
+                            <td>160</td>
+                        </tr>
+                    </table>
+                </article>
+            </div>
+        </section>
+
+
+
+        <section id="infoEmpresa">
+            <h2>Empresa asignada:</h2>
+            <div>
+
+                <table>
+                    <tr>
+                        <th>Empresa:</th>
+                        <td>miEmpresa SL</td>
+                    </tr>
+                    <tr>
+                        <th>Dirección</th>
+                        <td>C/Empresa FCT, S/N</td>
+                    </tr>
+                    <tr>
+                        <th>Horario:</th>
+                        <td>Lunes - Viernes: 8:00 - 15:00</td>
+                    </tr>
+                    <tr>
+                        <th>Tutor de empresa asignado:</th>
+                        <td>Juan Carlos Molina Luque</td>
+                    </tr>
+                    <tr>
+                        <th>Teléfono de contacto:</th>
+                        <td><a href="tel:+34674235458">674235458</a></td>
+                    </tr>
+                    <tr>
+                        <th>Correo electrónico:</th>
+                        <td><a href="mailto:tutorEmpresa@empresa.com">tutorEmpresa@empresa.com</a></td>
+                    </tr>
+
+
+
+                </table>
+            </div>
+        </section>
+        <section id="infoTutor">
+            <h2>Tutor profesor asignado:</h2>
+            <div>
+
+                <table>
+                    <tr>
+                        <th>Nombre y apellidos:</th>
+                        <td>Juan José Martínez Pérez</td>
+                    </tr>
+                    <tr>
+                        <th>Horario de tutorías:</th>
+                        <td>Martes - Viernes: 8:00 - 15:00</td>
+                    </tr>
+
+                    <tr>
+                        <th>Teléfono de contacto:</th>
+                        <td><a href="tel:+34652145879">652145879</a></td>
+                    </tr>
+                    <tr>
+                        <th>Correo electrónico:</th>
+                        <td><a href="mailto:tutorProfesor@cesurformacion.com">tutorProfesor@cesurformacion.com</a></td>
+                    </tr>
+
+
+
+                </table>
+        </section>
     </main>
 
     <script type="text/javascript" src="./static/js/app.js"></script>
