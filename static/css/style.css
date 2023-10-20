@@ -52,11 +52,13 @@ header div {
 
 
 /*VISTA ALUMNO*/
-#headerAlumno h1, #headerProfesor h1 {
+#headerAlumno h1,
+#headerProfesor h1 {
     margin: auto auto;
 }
 
-#headerAlumno img, #headerProfesor img {
+#headerAlumno img,
+#headerProfesor img {
     width: 10rem;
 }
 
@@ -181,6 +183,9 @@ header div {
 .block {
     display: block !important;
 }
+.none{
+    display: none !important;
+}
 
 #heroVistaAlumno #divActualizar.active {
     opacity: 1;
@@ -221,24 +226,63 @@ header div {
 
 #heroVistaAlumno #infoTutor {}
 
+
 /*VISTA PROFESOR*/
+#heroVistaProfesor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+#heroVistaProfesor section {
+    margin: 2rem 0;
+    padding: 1rem;
+}
 
-#heroVistaProfesor #tablaAlumnos img{
+#heroVistaProfesor #tablaAlumnos img {
     width: 2rem;
+}
+
+#heroVistaProfesor #tablaAlumnos {
+    display: flex;
+    align-items: center;
+    border: 1px solid gainsboro;
+}
+
+#heroVistaProfesor #infoAlumno {
+   display: none;
+}
+
+#heroVistaProfesor #infoAlumno form {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+}
+
+#heroVistaProfesor #horasAlumnosProf {
+    border: 1px solid gainsboro;
+}
+
+
+#heroVistaProfesor #empresasProf {
+    border: 1px solid gainsboro;
 }
 
 
 
+#heroVistaProfesor #empresasProf #empresasAsignadas{
+    display: flex;
+}
+#heroVistaProfesor #empresasProf #empresasAsignadas form{
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+}
+#heroVistaProfesor #infoEmpresas {
+    border: 1px solid gainsboro;
+}
 
-
-
-
-
-
-
-
-
-
-
-
+#heroVistaProfesor #infoEmpresas form {
+    display: flex;
+    flex-direction: column;
+}

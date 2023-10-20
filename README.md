@@ -1,6 +1,6 @@
 # HACER:
 Vista alumno:
-Añadir información de la empresa e información del tutor
+Editar registro, información de la empresa, información del tutor
 
 Vista profesor:
 Hacer todo

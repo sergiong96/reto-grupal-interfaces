@@ -17,45 +17,77 @@
     <main id="heroVistaProfesor">
         <div id="opacar"></div>
         <section id="tablaAlumnos">
-            <div>
-                <button type="button"><i class="fa-solid fa-trash-can"></i></button>
-                <button type="button"><i class="fa-solid fa-pencil"></i></button>
-            </div>
-            <table>
+            <article>
+                <div>
+                    <button type="button" id="borrarAluProf"><i class="fa-solid fa-trash-can"></i></button>
+                    <button type="button" onclick="abrirAñadirAlu('editar')"><i class="fa-solid fa-pencil"></i></button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Foto</th>
+                            <th>Nombre y apellidos</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bodyTablaAlu">
+                        <tr id="trA5">
+                            <td><input type="checkbox" name="" id="A5"></td>
+                            <td><img src="./static/img/otras/alumno.png" alt="Foto alumno"
+                                    onclick="abrirAñadirAlu('ver')"></td>
+                            <td class="nombre">Pedro Domínguez Molina</td>
+                        </tr>
+                        <tr id="trA4">
+                            <td><input type="checkbox" name="" id="A4"></td>
+                            <td><img src="./static/img/otras/alumno.png" alt="Foto alumno"
+                                    onclick="abrirAñadirAlu('ver')"></td>
+                            <td class="nombre">Juan Pérez Navarro</td>
+                        </tr>
+                        <tr id="trA3">
+                            <td><input type="checkbox" name="" id="A3"></td>
+                            <td><img src="./static/img/otras/alumno.png" alt="Foto alumno"
+                                    onclick="abrirAñadirAlu('ver')"></td>
+                            <td class="nombre">Cristian Rama García</td>
+                        </tr>
+                        <tr id="trA2">
+                            <td><input type="checkbox" name="" id="A2"></td>
+                            <td><img src="./static/img/otras/alumno.png" alt="Foto alumno"
+                                    onclick="abrirAñadirAlu('ver')"></td>
+                            <td class="nombre">Julian Muñoz Maldonado</td>
+                        </tr>
+                        <tr id="trA1">
+                            <td><input type="checkbox" name="" id="A1"></td>
+                            <td><img src="./static/img/otras/alumno.png" alt="Foto alumno"
+                                    onclick="abrirAñadirAlu('ver')"></td>
+                            <td class="nombre">Sergio Torres Paz</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-                <tr>
-                    <th></th>
-                    <th>Foto</th>
-                    <th>Nombre y apellidos</th>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" name="" id=""></td>
-                    <td><img src="./static/img/otras/alumno.png" alt=""></td>
-                    <td>Pedro Domínguez Molina</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" name="" id=""></td>
-                    <td><img src="./static/img/otras/alumno.png" alt=""></td>
-                    <td>Juan Pérez Navarro</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" name="" id=""></td>
-                    <td><img src="./static/img/otras/alumno.png" alt=""></td>
-                    <td>Cristian Rama García</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" name="" id=""></td>
-                    <td><img src="./static/img/otras/alumno.png" alt=""></td>
-                    <td>Julian Muñoz Maldonado</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" name="" id=""></td>
-                    <td><img src="./static/img/otras/alumno.png" alt=""></td>
-                    <td>Sergio Torres Paz</td>
-                </tr>
-            </table>
+                <button type="button" onclick="abrirAñadirAlu('añadir')">Añadir Alumno</button>
 
-            <button type="button">Añadir Alumno</button>
+            </article>
+
+            <article id="infoAlumno">
+                <form action="#" method="GET">
+                    <label for="nombAluInfo">Nombre y apellidos</label>
+                    <input type="text" id="nombAluInfo" value="Alumno alumno alumno">
+
+                    <label for="fnacAluInfo">Fecha de nacimiento</label>
+                    <input type="text" id="fnacAluInfo" value="01/05/1999">
+
+                    <label for="empAluInfo">Empresa asignada</label>
+                    <input type="text" id="empAluInfo" value="Empresa SL">
+
+                    <label for="tlfAluInfo">Teléfono</label>
+                    <input type="tel" id="tlfAluInfo" value="685457895">
+
+                    <label for="emailAluInfo">Correo electrónico</label>
+                    <input type="email" id="emailAluInfo" value="alumno@correo.com">
+
+                    <button type="button" id="añadirEditarAlu"></button>
+                </form>
+            </article>
         </section>
 
         <section id="horasAlumnosProf">
@@ -212,27 +244,6 @@
         <section id="empresasProf">
 
             <article id="empresasAsignadas">
-                
-                <div>
-                    <label for="alu">Seleccione un alumno</label>
-                    <select name="alumnoEm" id="alu">
-                        <option value="">Pedro Domínguez Molina</option>
-                        <option value="">Juan Pérez Navarro</option>
-                        <option value="">Cristian Rama García</option>
-                        <option value="">Julian Muñoz Maldonado</option>
-                        <option value="">Sergio Torres Paz</option>
-                    </select>
-                    
-                    <label for="empr">Seleccione una empresa</label>
-                    <select name="empresaEm" id="empr">
-                        <option value="">NTT-DATA</option>
-                        <option value="">ACCENTURE</option>
-                        <option value="">VIEWNEXT</option>
-                        <option value="">AVANADE</option>
-                        <option value="">YO PONGO EL HIELO</option>
-                    </select>
-                    <button type="button">Asignar empresa</button>
-                </div>
                 <table>
                     <tr>
                         <th>Alumno</th>
@@ -259,22 +270,42 @@
                         <td>YO PONGO EL HIELO</td>
                     </tr>
                 </table>
+                <form>
+                    <label for="alu">Seleccione un alumno</label>
+                    <select name="alumnoEm" id="alu">
+                        <option value="alu1">Pedro Domínguez Molina</option>
+                        <option value="alu2">Juan Pérez Navarro</option>
+                        <option value="alu3">Cristian Rama García</option>
+                        <option value="alu4">Julian Muñoz Maldonado</option>
+                        <option value="alu5">Sergio Torres Paz</option>
+                    </select>
+
+                    <label for="empr">Seleccione una empresa</label>
+                    <select name="empresaEm" id="empr">
+                        <option value="ntt">NTT-DATA</option>
+                        <option value="acc">ACCENTURE</option>
+                        <option value="viewn">VIEWNEXT</option>
+                        <option value="avan">AVANADE</option>
+                        <option value="yph">YO PONGO EL HIELO</option>
+                    </select>
+                    <button type="button">Asignar empresa</button>
+                </form>
             </article>
         </section>
 
         <section id="infoEmpresas">
-            <button type="button">Añadir empresa</button>
-            <div>
-                <label for="">Seleccione la empresa que desea modificar</label>
-                <select name="" id="">
-                    <option value="">NTT-DATA</option>
-                    <option value="">ACCENTURE</option>
-                    <option value="">VIEWNEXT</option>
-                    <option value="">AVANADE</option>
-                    <option value="">YO PONGO EL HIELO</option>
+            <button type="button">Añadir nueva empresa</button>
+            <form>
+                <label for="empresa">Seleccione la empresa que desea modificar</label>
+                <select name="empresa" id="empresa">
+                    <option value="ntt">NTT-DATA</option>
+                    <option value="acc">ACCENTURE</option>
+                    <option value="viewn">VIEWNEXT</option>
+                    <option value="avan">AVANADE</option>
+                    <option value="yph">YO PONGO EL HIELO</option>
                 </select>
                 <button type="button">Modificar empresa</button>
-            </div>
+            </form>
 
 
 
