@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" href="../static/css/style.css">
     <title>PECesur</title>
 </head>
 
 <body>
-    <img src="./static/img/cesurme.jpg" alt="Cesur Málaga Este" id="backgroundIMG">
+    <img src="../static/img/cesurme.jpg" alt="Cesur Málaga Este" id="backgroundIMG">
 
     <header>
-        <img src="./static/img/logo/logoPEC.png" alt="Logo PECesur">
+        <img src="../static/img/logo/logoPEC.png" alt="Logo PECesur">
         <div>
             <h1>Bienvenido al portal PECesur</h1>
             <p>Desde aquí, podrás gestionar toda la información de las prácticas externas (Dual y FCT) tanto si eres alumno
@@ -30,7 +30,7 @@
                 <label for="passP">Contraseña</label>
                 <input type="password" id="passP" name="passwordProfesor">
 
-                <button type="button" onclick="validarProfesor()">Iniciar Sesión</button>
+                <button type="button" data-type="validarProfesor">Iniciar Sesión</button>
                 <p id="credencialesP"></p>
             </form>
 
@@ -44,7 +44,7 @@
                 <label for="passA">Contraseña</label>
                 <input type="password" id="passA" name="passwordAlumno">
 
-                <button type="button" onclick="validarAlumno()">Iniciar Sesión</button>
+                <button type="button" data-type="validarAlumno">Iniciar Sesión</button>
                 <p id="credencialesA"></p>
       
             </form>
@@ -52,7 +52,7 @@
         </section>
     </main>
 
-    <script type="text/javascript" src="./static/js/app.js"></script>
+    <script type="text/javascript" src="../static/js/app.js"></script>
 </body>
 
 </html>

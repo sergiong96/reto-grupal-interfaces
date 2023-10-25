@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import "./normalize.css";
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+/*INDEX*/
+header {
+    display: flex;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+}
+
+#backgroundIMG {
+    position: absolute;
+    opacity: 50%;
+    width: 100%;
+    height: 100%;
+    z-index: -999999;
+}
+
+#heroIndex {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3rem;
+
+    h3 {
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+        border-radius: 0.5rem;
+        padding: 2rem;
+        background-color: #a8cda8;
+
+        input {
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+
+
+/*HEADER COMUNES*/
+#headerAlumno h1,
+#headerProfesor h1 {
+    margin: auto auto;
+}
+
+#headerAlumno img,
+#headerProfesor img {
+    width: 10rem;
+}
+
+
+/*VISTA ALUMNO*/
+
+#heroVistaAlumno {
+    #opacar {
+        display: none;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        transition: opacity 800ms ease-in-out;
+
+        &.active {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: black;
+            width: 100%;
+            height: 100%;
+            opacity: 60%;
+            z-index: 100;
+            transition: opacity 800ms ease-in-out;
+        }
+    }
+
+    
+    #divAñadir {
+        display: none;
+        overflow: hidden;
+        position: absolute;
+        left: 35%;
+        top: 30%;
+        width: 0;
+        height: 0;
+        transition: width 1s ease-in-out, height 1s ease-in-out, opacity 1s ease-in-out, background-color 1s ease-in-out;
+        border: 1px solid black;
+        opacity: 0;
+        padding: 1rem;
+        z-index: 150;
+
+        &.active {
+            width: 25rem;
+            height: 10rem;
+            transition: width 1s ease-in-out, height 1s ease-in-out, opacity 1s ease-in-out, background-color 1s ease-in-out;
+            background-color: #a8cda8;
+            opacity: 1;
+        }
+
+        #buttonAñadir {
+            margin-top: 1rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            opacity: 1;
+
+            div {
+                display: inline-block;
+
+                label {
+                    display: inline-block;
+                    width: 10rem;
+                }
+
+                input {
+                    width: 12rem;
+                }
+
+               
+            }
+        }
+
+        &>button {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    }
+
+
+
+    #divActualizar {
+        display: none;
+        position: absolute;
+        top: 30%;
+        left: 43%;
+        z-index: 9999;
+        background-color: #a8cda8;
+        opacity: 0;
+        transition: opacity 800ms ease-in-out;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 15rem;
+            padding: 2rem;
+
+            input {
+                &:nth-child(5) {
+                    margin-bottom: 1rem;
+                }
+            }
+
+        }
+
+        button:nth-child(1) {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        &.active {
+            opacity: 1;
+            transition: opacity 800ms ease-in-out;
+        }
+    }
+
+
+    #seccionTabla {
+
+        table {
+            border-collapse: collapse;
+            margin: 0 auto;
+            width: 50%;
+
+            thead {
+                background-color: lightgray;
+            }
+
+            tr {
+                &:nth-child(2n) {
+                    background-color: lightgray;
+                }
+            }
+
+            th {
+                border: 1px solid black;
+                padding: 0.5rem 1rem;
+            }
+
+            td {
+                text-align: center;
+                border: 1px solid black;
+                padding: 0.5rem 1rem;
+            }
+        }
+
+
+        #botonesEdicion {
+            display: flex;
+            justify-content: space-evenly;
+            margin-bottom: 1rem;
+
+            &>div {
+                margin: 0 17rem 0 0;
+            }
+        }
+
+
+    }
+
+
+    #horas {
+        display: flex;
+        flex-direction: column;
+        margin: 5rem 0;
+        align-items: center;
+
+        div {
+            display: flex;
+            justify-content: center;
+
+            article {
+                margin: 0 2rem;
+                text-align: center;
+            }
+
+        }
+
+
+    }
+
+    #infoEmpresa {
+        display: flex;
+        flex-direction: column;
+        margin: 5rem 0;
+        align-items: center;
+    }
+
+    #infoTutor {
+        display: flex;
+        flex-direction: column;
+        margin: 5rem 0;
+        align-items: center;
+    }
+}
+
+
+.block {
+    display: block !important;
+}
+
+.none {
+    display: none !important;
+}
+
+
+
+/*VISTA PROFESOR*/
+#heroVistaProfesor {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+
+    section {
+        margin: 2rem 0;
+        padding: 1rem;
+    }
+
+
+    #tablaAlumnos {
+        display: flex;
+        align-items: center;
+        border: 1px solid gainsboro;
+
+        img {
+            width: 2rem;
+        }
+
+        #infoAlumno {
+            display: none;
+
+            form {
+                display: flex;
+                flex-direction: column;
+                margin-left: 2rem;
+            }
+        }
+
+    }
+
+
+    #empresasProf {
+
+        #empresasAsignadas {
+            display: flex;
+
+            form {
+                display: flex;
+                flex-direction: column;
+                margin-left: 2rem;
+            }
+        }
+
+        #infoEmpresas {
+            border: 1px solid gainsboro;
+
+            form {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+    }
+}
+
+
+#barraLateralProf {
+    display: inline-flex;
+
+    nav ul {
+        list-style-type: none;
+
+        li {
+            border: 1px solid gray;
+            padding: 2rem;
+        }
+    }
+
+    #horasAlumnosProf {
+        border: 1px solid gainsboro;
+    }
+
+    #empresasProf {
+        border: 1px solid gainsboro;
+    }
+
+}
