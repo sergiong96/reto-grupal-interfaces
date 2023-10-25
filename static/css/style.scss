@@ -63,8 +63,8 @@ header {
 }
 
 
-/*VISTA ALUMNO*/
 
+/*VISTA ALUMNO*/
 #heroVistaAlumno {
     #opacar {
         display: none;
@@ -86,7 +86,7 @@ header {
         }
     }
 
-    
+
     #divAñadir {
         display: none;
         overflow: hidden;
@@ -130,7 +130,7 @@ header {
                     width: 12rem;
                 }
 
-               
+
             }
         }
 
@@ -140,7 +140,6 @@ header {
             top: 0;
         }
     }
-
 
 
     #divActualizar {
@@ -164,7 +163,6 @@ header {
                     margin-bottom: 1rem;
                 }
             }
-
         }
 
         button:nth-child(1) {
@@ -272,81 +270,121 @@ header {
 
 /*VISTA PROFESOR*/
 #heroVistaProfesor {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-
-    section {
-        margin: 2rem 0;
-        padding: 1rem;
-    }
+    display: grid;
+    grid-template-columns: 17rem auto;
+    grid-template-rows: 30rem;
 
 
-    #tablaAlumnos {
-        display: flex;
-        align-items: center;
-        border: 1px solid gainsboro;
 
-        img {
-            width: 2rem;
-        }
+    #barraLateralProf {
+        display: inline-flex;
+        grid-column: 1;
+        grid-row: 1;
 
-        #infoAlumno {
-            display: none;
+        nav {
+            ul {
+                list-style-type: none;
+                padding: 0;
 
-            form {
-                display: flex;
-                flex-direction: column;
-                margin-left: 2rem;
+                li {
+                    border: 1px solid gray;
+                    padding: 2rem;
+                    cursor: pointer;
+                    background-color: gainsboro;
+
+                    &.active{
+                        background-color: lightgreen;
+                    }
+
+                    a {
+                        width: 100%;
+                        height: 100%;
+                        text-decoration: none;
+                        color: black;
+                    }
+                    &:nth-child(5){
+                        background-color: rgb(255, 90, 90);
+                    }
+                }
             }
         }
 
-    }
-
-
-    #empresasProf {
-
-        #empresasAsignadas {
-            display: flex;
-
-            form {
-                display: flex;
-                flex-direction: column;
-                margin-left: 2rem;
-            }
-        }
-
-        #infoEmpresas {
+        #horasAlumnosProf {
             border: 1px solid gainsboro;
+        }
 
-            form {
-                display: flex;
-                flex-direction: column;
+        #empresasProf {
+            border: 1px solid gainsboro;
+        }
+
+    }
+
+    #mainContenido {
+        grid-column: 2;
+        grid-row: 1;
+        width: 60%;
+        margin: 0 auto;
+
+        .contenido {
+            margin: 2rem 0;
+            padding: 1rem;
+            display: none;
+        }
+
+        .contenido.active {
+            display: block;
+            border: 1px solid gainsboro;
+            margin: 2rem 0;
+            padding: 1rem;
+
+        }
+
+
+        #tablaAlumnos.active {
+            display: flex;
+            align-items: center;
+
+
+            img {
+                width: 2rem;
             }
+
+            #infoAlumno {
+                display: none;
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 2rem;
+                }
+            }
+
+        }
+
+        #empresasProf {
+
+            #empresasAsignadas {
+                display: flex;
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 2rem;
+                }
+            }
+
+            #infoEmpresas {
+                border: 1px solid gainsboro;
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+
+
+
         }
 
     }
-}
-
-
-#barraLateralProf {
-    display: inline-flex;
-
-    nav ul {
-        list-style-type: none;
-
-        li {
-            border: 1px solid gray;
-            padding: 2rem;
-        }
-    }
-
-    #horasAlumnosProf {
-        border: 1px solid gainsboro;
-    }
-
-    #empresasProf {
-        border: 1px solid gainsboro;
-    }
-
 }

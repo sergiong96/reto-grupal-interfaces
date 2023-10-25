@@ -15,313 +15,316 @@
         <img src="../static/img/logo/logoPEC.png" alt="Logo PECesur">
         <h1>Portal del Profesor</h1>
     </header>
-    <aside id="barraLateralProf">
-        <nav>
-            <ul>
-                <li data-target="tablaAlumnos"><a href="#" >Listado alumnos</a></li>
-                <li data-target=""><a href="#" data-target="">Actividades diarias</a></li>
-                <li data-target="horasAlumnosProf"><a href="#">Horas prácticas</a></li>
-                <li data-target="empresasProf"><a href="#">Empresas</a></li>
-            </ul>
-        </nav>
-    </aside>
+
     <main id="heroVistaProfesor">
+        <aside id="barraLateralProf">
+            <nav>
+                <ul>
+                    <li data-target="tablaAlumnos" class="active"><a href="#tablaAlumnos">Listado alumnos</a></li>
+                    <li data-target="tablaActividades"><a href="#tablaActividades" data-target="">Actividades
+                            diarias</a></li>
+                    <li data-target="horasAlumnosProf"><a href="#horasAlumnosProf">Horas prácticas</a></li>
+                    <li data-target="empresasProf"><a href="#empresasProf">Empresas</a></li>
+                    <li data-direction="index"><a href="#">Cerrar sesión</a></li>
+                </ul>
+            </nav>
+        </aside>
         <div id="opacar"></div>
+        <section id="mainContenido">
+            <section id="tablaAlumnos" class="contenido active">
+                <article>
+                    <div>
+                        <button type="button" data-type="borrar" id="borrarAluProf"><i
+                                class="fa-solid fa-trash-can"></i></button>
+                        <button type="button" data-type="editar"><i class="fa-solid fa-pencil"></i></button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Foto</th>
+                                <th>Nombre y apellidos</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bodyTablaAlu">
+                            <tr id="trA5">
+                                <td><input type="checkbox" name="" id="A5"></td>
+                                <td><img src="../static/img/otras/alumno.png" alt="Foto alumno"></td>
+                                <td class="nombre">Pedro Domínguez Molina</td>
+                            </tr>
+                            <tr id="trA4">
+                                <td><input type="checkbox" name="" id="A4"></td>
+                                <td><img src="../static/img/otras/alumno.png" alt="Foto alumno"></td>
+                                <td class="nombre">Juan Pérez Navarro</td>
+                            </tr>
+                            <tr id="trA3">
+                                <td><input type="checkbox" name="" id="A3"></td>
+                                <td><img src="../static/img/otras/alumno.png" alt="Foto alumno"></td>
+                                <td class="nombre">Cristian Rama García</td>
+                            </tr>
+                            <tr id="trA2">
+                                <td><input type="checkbox" name="" id="A2"></td>
+                                <td><img src="../static/img/otras/alumno.png" alt="Foto alumno"></td>
+                                <td class="nombre">Julian Muñoz Maldonado</td>
+                            </tr>
+                            <tr id="trA1">
+                                <td><input type="checkbox" name="" id="A1"></td>
+                                <td><img src="../static/img/otras/alumno.png" alt="Foto alumno"></td>
+                                <td class="nombre">Sergio Torres Paz</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-        <section id="tablaAlumnos" class="contenido active">
-            <article>
-                <div>
-                    <button type="button" data-type="borrar" id="borrarAluProf"><i class="fa-solid fa-trash-can"></i></button>
-                    <button type="button" data-type="editar"><i class="fa-solid fa-pencil"></i></button>
-                </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Foto</th>
-                            <th>Nombre y apellidos</th>
-                        </tr>
-                    </thead>
-                    <tbody id="bodyTablaAlu">
-                        <tr id="trA5">
-                            <td><input type="checkbox" name="" id="A5"></td>
-                            <td><img src="../static/img/otras/alumno.png" alt="Foto alumno"
-                                    onclick="abrirAñadirAlu('ver')"></td>
-                            <td class="nombre">Pedro Domínguez Molina</td>
-                        </tr>
-                        <tr id="trA4">
-                            <td><input type="checkbox" name="" id="A4"></td>
-                            <td><img src="../static/img/otras/alumno.png" alt="Foto alumno"
-                                    onclick="abrirAñadirAlu('ver')"></td>
-                            <td class="nombre">Juan Pérez Navarro</td>
-                        </tr>
-                        <tr id="trA3">
-                            <td><input type="checkbox" name="" id="A3"></td>
-                            <td><img src="../static/img/otras/alumno.png" alt="Foto alumno"
-                                    onclick="abrirAñadirAlu('ver')"></td>
-                            <td class="nombre">Cristian Rama García</td>
-                        </tr>
-                        <tr id="trA2">
-                            <td><input type="checkbox" name="" id="A2"></td>
-                            <td><img src="../static/img/otras/alumno.png" alt="Foto alumno"
-                                    onclick="abrirAñadirAlu('ver')"></td>
-                            <td class="nombre">Julian Muñoz Maldonado</td>
-                        </tr>
-                        <tr id="trA1">
-                            <td><input type="checkbox" name="" id="A1"></td>
-                            <td><img src="../static/img/otras/alumno.png" alt="Foto alumno"
-                                    onclick="abrirAñadirAlu('ver')"></td>
-                            <td class="nombre">Sergio Torres Paz</td>
-                        </tr>
-                    </tbody>
-                </table>
+                    <button type="button" data-type="añadir">Añadir Alumno</button>
 
-                <button type="button" data-type="añadir">Añadir Alumno</button>
+                </article>
 
-            </article>
+                <article id="infoAlumno">
+                    <form action="#" method="GET">
+                        <label for="nombAluInfo">Nombre y apellidos</label>
+                        <input type="text" id="nombAluInfo" value="Alumno alumno alumno">
 
-            <article id="infoAlumno">
-                <form action="#" method="GET">
-                    <label for="nombAluInfo">Nombre y apellidos</label>
-                    <input type="text" id="nombAluInfo" value="Alumno alumno alumno">
+                        <label for="fnacAluInfo">Fecha de nacimiento</label>
+                        <input type="text" id="fnacAluInfo" value="01/05/1999">
 
-                    <label for="fnacAluInfo">Fecha de nacimiento</label>
-                    <input type="text" id="fnacAluInfo" value="01/05/1999">
+                        <label for="empAluInfo">Empresa asignada</label>
+                        <input type="text" id="empAluInfo" value="Empresa SL">
 
-                    <label for="empAluInfo">Empresa asignada</label>
-                    <input type="text" id="empAluInfo" value="Empresa SL">
+                        <label for="tlfAluInfo">Teléfono</label>
+                        <input type="tel" id="tlfAluInfo" value="685457895">
 
-                    <label for="tlfAluInfo">Teléfono</label>
-                    <input type="tel" id="tlfAluInfo" value="685457895">
+                        <label for="emailAluInfo">Correo electrónico</label>
+                        <input type="email" id="emailAluInfo" value="alumno@correo.com">
 
-                    <label for="emailAluInfo">Correo electrónico</label>
-                    <input type="email" id="emailAluInfo" value="alumno@correo.com">
+                        <button type="button" id="añadirEditarAlu"></button>
+                    </form>
+                </article>
+            </section>
 
-                    <button type="button" id="añadirEditarAlu"></button>
-                </form>
-            </article>
-        </section>
+            <section id="tablaActividades" class="contenido">
+                <h2>ACTIVIDADES POR HACER</h2>
+            </section>
 
-        <section id="horasAlumnosProf" class="contenido">
+            <section id="horasAlumnosProf" class="contenido">
 
-            <table>
-                <tr>
-                    <th>Alumno</th>
-                    <th>DUAL</th>
-                    <th>FCT</th>
-                </tr>
-
-                <tr>
-                    <td>Pedro Domínguez Molina</td>
-                    <td>
-                        <table>
-                            <tr>
-                                <th>Horas realizadas</th>
-                                <th>Horas pendientes</th>
-                            </tr>
-                            <tr>
-                                <td>20</td>
-                                <td>140</td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td>
-                        <table>
-                            <tr>
-                                <th>Horas realizadas</th>
-                                <th>Horas pendientes</th>
-                            </tr>
-                            <tr>
-                                <td>0</td>
-                                <td>160</td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Juan Pérez Navarro</td>
-                    <td>
-                        <table>
-                            <tr>
-                                <th>Horas realizadas</th>
-                                <th>Horas pendientes</th>
-                            </tr>
-                            <tr>
-                                <td>20</td>
-                                <td>140</td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td>
-                        <table>
-                            <tr>
-                                <th>Horas realizadas</th>
-                                <th>Horas pendientes</th>
-                            </tr>
-                            <tr>
-                                <td>0</td>
-                                <td>160</td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Cristian Rama García</td>
-                    <td>
-                        <table>
-                            <tr>
-                                <th>Horas realizadas</th>
-                                <th>Horas pendientes</th>
-                            </tr>
-                            <tr>
-                                <td>20</td>
-                                <td>140</td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td>
-                        <table>
-                            <tr>
-                                <th>Horas realizadas</th>
-                                <th>Horas pendientes</th>
-                            </tr>
-                            <tr>
-                                <td>0</td>
-                                <td>160</td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Julian Muñoz Maldonado</td>
-                    <td>
-                        <table>
-                            <tr>
-                                <th>Horas realizadas</th>
-                                <th>Horas pendientes</th>
-                            </tr>
-                            <tr>
-                                <td>20</td>
-                                <td>140</td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td>
-                        <table>
-                            <tr>
-                                <th>Horas realizadas</th>
-                                <th>Horas pendientes</th>
-                            </tr>
-                            <tr>
-                                <td>0</td>
-                                <td>160</td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Sergio Torres Paz</td>
-                    <td>
-                        <table>
-                            <tr>
-                                <th>Horas realizadas</th>
-                                <th>Horas pendientes</th>
-                            </tr>
-                            <tr>
-                                <td>20</td>
-                                <td>140</td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td>
-                        <table>
-                            <tr>
-                                <th>Horas realizadas</th>
-                                <th>Horas pendientes</th>
-                            </tr>
-                            <tr>
-                                <td>0</td>
-                                <td>160</td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-
-        </section>
-
-
-
-
-        <section id="empresasProf" class="contenido">
-
-            <article id="empresasAsignadas">
                 <table>
                     <tr>
                         <th>Alumno</th>
-                        <th>Empresa asignada</th>
+                        <th>DUAL</th>
+                        <th>FCT</th>
                     </tr>
+
                     <tr>
                         <td>Pedro Domínguez Molina</td>
-                        <td>NTT-DATA</td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <th>Horas realizadas</th>
+                                    <th>Horas pendientes</th>
+                                </tr>
+                                <tr>
+                                    <td>20</td>
+                                    <td>140</td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <th>Horas realizadas</th>
+                                    <th>Horas pendientes</th>
+                                </tr>
+                                <tr>
+                                    <td>0</td>
+                                    <td>160</td>
+                                </tr>
+                            </table>
+                        </td>
                     </tr>
                     <tr>
                         <td>Juan Pérez Navarro</td>
-                        <td>ACCENTURE</td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <th>Horas realizadas</th>
+                                    <th>Horas pendientes</th>
+                                </tr>
+                                <tr>
+                                    <td>20</td>
+                                    <td>140</td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <th>Horas realizadas</th>
+                                    <th>Horas pendientes</th>
+                                </tr>
+                                <tr>
+                                    <td>0</td>
+                                    <td>160</td>
+                                </tr>
+                            </table>
+                        </td>
                     </tr>
                     <tr>
                         <td>Cristian Rama García</td>
-                        <td>VIEWNEXT</td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <th>Horas realizadas</th>
+                                    <th>Horas pendientes</th>
+                                </tr>
+                                <tr>
+                                    <td>20</td>
+                                    <td>140</td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <th>Horas realizadas</th>
+                                    <th>Horas pendientes</th>
+                                </tr>
+                                <tr>
+                                    <td>0</td>
+                                    <td>160</td>
+                                </tr>
+                            </table>
+                        </td>
                     </tr>
                     <tr>
                         <td>Julian Muñoz Maldonado</td>
-                        <td>AVANADE</td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <th>Horas realizadas</th>
+                                    <th>Horas pendientes</th>
+                                </tr>
+                                <tr>
+                                    <td>20</td>
+                                    <td>140</td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <th>Horas realizadas</th>
+                                    <th>Horas pendientes</th>
+                                </tr>
+                                <tr>
+                                    <td>0</td>
+                                    <td>160</td>
+                                </tr>
+                            </table>
+                        </td>
                     </tr>
                     <tr>
                         <td>Sergio Torres Paz</td>
-                        <td>YO PONGO EL HIELO</td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <th>Horas realizadas</th>
+                                    <th>Horas pendientes</th>
+                                </tr>
+                                <tr>
+                                    <td>20</td>
+                                    <td>140</td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <th>Horas realizadas</th>
+                                    <th>Horas pendientes</th>
+                                </tr>
+                                <tr>
+                                    <td>0</td>
+                                    <td>160</td>
+                                </tr>
+                            </table>
+                        </td>
                     </tr>
                 </table>
-                <form>
-                    <label for="alu">Seleccione un alumno</label>
-                    <select name="alumnoEm" id="alu">
-                        <option value="alu1">Pedro Domínguez Molina</option>
-                        <option value="alu2">Juan Pérez Navarro</option>
-                        <option value="alu3">Cristian Rama García</option>
-                        <option value="alu4">Julian Muñoz Maldonado</option>
-                        <option value="alu5">Sergio Torres Paz</option>
-                    </select>
 
-                    <label for="empr">Seleccione una empresa</label>
-                    <select name="empresaEm" id="empr">
-                        <option value="ntt">NTT-DATA</option>
-                        <option value="acc">ACCENTURE</option>
-                        <option value="viewn">VIEWNEXT</option>
-                        <option value="avan">AVANADE</option>
-                        <option value="yph">YO PONGO EL HIELO</option>
-                    </select>
-                    <button type="button">Asignar empresa</button>
-                </form>
-            </article>
+            </section>
 
-            <article id="infoEmpresas">
-                <button type="button">Añadir nueva empresa</button>
-                <form>
-                    <label for="empresa">Seleccione la empresa que desea modificar</label>
-                    <select name="empresa" id="empresa">
-                        <option value="ntt">NTT-DATA</option>
-                        <option value="acc">ACCENTURE</option>
-                        <option value="viewn">VIEWNEXT</option>
-                        <option value="avan">AVANADE</option>
-                        <option value="yph">YO PONGO EL HIELO</option>
-                    </select>
-                    <button type="button">Modificar empresa</button>
-                </form>
-            </article>
-            
+
+
+
+            <section id="empresasProf" class="contenido">
+
+                <article id="empresasAsignadas">
+                    <table>
+                        <tr>
+                            <th>Alumno</th>
+                            <th>Empresa asignada</th>
+                        </tr>
+                        <tr>
+                            <td>Pedro Domínguez Molina</td>
+                            <td>NTT-DATA</td>
+                        </tr>
+                        <tr>
+                            <td>Juan Pérez Navarro</td>
+                            <td>ACCENTURE</td>
+                        </tr>
+                        <tr>
+                            <td>Cristian Rama García</td>
+                            <td>VIEWNEXT</td>
+                        </tr>
+                        <tr>
+                            <td>Julian Muñoz Maldonado</td>
+                            <td>AVANADE</td>
+                        </tr>
+                        <tr>
+                            <td>Sergio Torres Paz</td>
+                            <td>YO PONGO EL HIELO</td>
+                        </tr>
+                    </table>
+                    <form>
+                        <label for="alu">Seleccione un alumno</label>
+                        <select name="alumnoEm" id="alu">
+                            <option value="alu1">Pedro Domínguez Molina</option>
+                            <option value="alu2">Juan Pérez Navarro</option>
+                            <option value="alu3">Cristian Rama García</option>
+                            <option value="alu4">Julian Muñoz Maldonado</option>
+                            <option value="alu5">Sergio Torres Paz</option>
+                        </select>
+
+                        <label for="empr">Seleccione una empresa</label>
+                        <select name="empresaEm" id="empr">
+                            <option value="ntt">NTT-DATA</option>
+                            <option value="acc">ACCENTURE</option>
+                            <option value="viewn">VIEWNEXT</option>
+                            <option value="avan">AVANADE</option>
+                            <option value="yph">YO PONGO EL HIELO</option>
+                        </select>
+                        <button type="button">Asignar empresa</button>
+                    </form>
+                </article>
+
+                <article id="infoEmpresas">
+                    <button type="button">Añadir nueva empresa</button>
+                    <form>
+                        <label for="empresa">Seleccione la empresa que desea modificar</label>
+                        <select name="empresa" id="empresa">
+                            <option value="ntt">NTT-DATA</option>
+                            <option value="acc">ACCENTURE</option>
+                            <option value="viewn">VIEWNEXT</option>
+                            <option value="avan">AVANADE</option>
+                            <option value="yph">YO PONGO EL HIELO</option>
+                        </select>
+                        <button type="button">Modificar empresa</button>
+                    </form>
+                </article>
+
+            </section>
+
         </section>
-
-
     </main>
 
 
