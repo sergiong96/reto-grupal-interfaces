@@ -142,6 +142,20 @@ function abrirAñadirEntradaAlu() {
 }
 
 
+<<<<<<< HEAD
+=======
+function cerrarFormAñadir() {
+    const divFormAñadir = document.getElementById("divAñadir");
+    const divOpacar = document.getElementById("opacar");
+
+    if (divFormAñadir.classList.contains("active") && divOpacar.classList.contains("active")) {
+        divFormAñadir.classList = "";
+        divOpacar.classList = "";
+    }
+}
+
+
+>>>>>>> 96c21862e51b0ec8f0a4129d76276ebc512a0e3b
 function añadirEntradaAluFinal() {
     let fecha = document.getElementById("fechaIn").value;
     let tipo = document.getElementById("tipoIn").value;
@@ -264,6 +278,7 @@ function editarRegAluFinal() {
     }
 
 }
+<<<<<<< HEAD
 
 function cerrarFormReg() {
     console.log("cerrar");
@@ -281,6 +296,25 @@ function cerrarFormReg() {
 
 
 /*Profesor*/
+=======
+
+
+/*PESTAÑA PROFESOR*/
+function borrarRegistro() {
+    let checkBoxs = document.querySelectorAll("input[type='checkbox']");
+    for (let i = 0; i < checkBoxs.length; i++) {
+        if (checkBoxs[i].checked) {
+            let filaBorrar = document.getElementById("tr" + checkBoxs[i].id);
+            filaBorrar.remove();
+        }
+    }
+}
+
+const botonBorrar = document.getElementById("borrarAluProf");
+botonBorrar.addEventListener("click", borrarRegistro);
+
+
+>>>>>>> 96c21862e51b0ec8f0a4129d76276ebc512a0e3b
 function abrirAñadirAlu(accion) {
     const divFormAñadir = document.getElementById("infoAlumno");
     const boton = document.getElementById("añadirEditarAlu");
@@ -314,8 +348,11 @@ function abrirAñadirAlu(accion) {
         }
         boton.classList = "";
         boton.innerText = "Añadir alumno";
+<<<<<<< HEAD
         boton.addEventListener("click", añadirEditarAlumnoProf);
 
+=======
+>>>>>>> 96c21862e51b0ec8f0a4129d76276ebc512a0e3b
     } else if (accion === "ver") {
         console.log("ver");
         document.getElementById("añadirEditarAlu").classList.add("none");
@@ -329,8 +366,12 @@ function abrirAñadirAlu(accion) {
 }
 
 
+<<<<<<< HEAD
 
 function añadirEditarAlumnoProf() {
+=======
+function añadirEditarAlu() {
+>>>>>>> 96c21862e51b0ec8f0a4129d76276ebc512a0e3b
     const bodyTablaAlu = document.getElementById("bodyTablaAlu");
     const textoBoton = document.getElementById("añadirEditarAlu").innerText;
     const divAñadirEditar = document.getElementById("infoAlumno");
@@ -343,7 +384,11 @@ function añadirEditarAlumnoProf() {
         inputCheck.type = "checkbox";
         const tdImg = document.createElement("td");
         const img = document.createElement("img");
+<<<<<<< HEAD
         img.src = "../static/img/otras/alumno.png";
+=======
+        img.src = "./static/img/otras/alumno.png";
+>>>>>>> 96c21862e51b0ec8f0a4129d76276ebc512a0e3b
         const tdNomb = document.createElement("td");
         tdNomb.innerText = nombreAlu;
 
@@ -370,11 +415,19 @@ function añadirEditarAlumnoProf() {
         nombreAlu = document.querySelector("#infoAlumno form #nombAluInfo").value;
         document.querySelector(`tr#${idFilaAlu} td.nombre`).innerText = nombreAlu;
 
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> 96c21862e51b0ec8f0a4129d76276ebc512a0e3b
     }
 
     divAñadirEditar.classList = "";
 }
 
+<<<<<<< HEAD
 //Eliminar alumno
 function borrarRegistroProf() {
     let checkBoxs = document.querySelectorAll("input[type='checkbox']");
@@ -385,3 +438,7 @@ function borrarRegistroProf() {
         }
     }
 }
+=======
+const botonAñadirEditar = document.getElementById("añadirEditarAlu");
+botonAñadirEditar.addEventListener("click", añadirEditarAlu);
+>>>>>>> 96c21862e51b0ec8f0a4129d76276ebc512a0e3b
