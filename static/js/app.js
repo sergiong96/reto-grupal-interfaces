@@ -5,16 +5,17 @@ const botonValidarProf = document.querySelector("#heroIndex section button[data-
 
 
 /*Variables Alumno*/
+const enlacesNavAlu = document.querySelectorAll("#barraLateralAlu li[data-target]");
 const botonAbrirAñadirAlu = document.querySelector("#seccionTabla #botonesEdicion button[data-type='abrirAñadir']");
 const botonBorrarAlumno = document.querySelector("#seccionTabla #botonesEdicion div button[data-type='eliminar']");
 const botonEditarAlumno = document.querySelector("#seccionTabla #botonesEdicion div button[data-type='editar']");
 const botonInsertarAlu = document.querySelector("#divAñadir form #buttonAñadir");
 const botonCerrarForm = document.querySelector("#divAñadir button[data-type='cerrar']");
 const botonCerrarActualizar = document.querySelector("#divActualizar button[data-type='cerrar']");
-
+const navCerrarSesionAlu = document.querySelector("#barraLateralAlu li[data-direction]");
 
 /*Variables Profesor*/
-const enlacesNav = document.querySelectorAll("#barraLateralProf li[data-target]");
+const enlacesNavProf = document.querySelectorAll("#barraLateralProf li[data-target]");
 const botonBorrar = document.querySelector("#heroVistaProfesor #tablaAlumnos div button[data-type='borrar']");
 const abrirEditarAlumno = document.querySelector("#heroVistaProfesor #tablaAlumnos div button[data-type='editar']");
 const abrirAñadirAlumno = document.querySelector("#heroVistaProfesor #tablaAlumnos button[data-type='añadir']");
@@ -35,6 +36,16 @@ if (botonValidarProf) {
 
 
 /*Eventos Alumno*/
+if (enlacesNavAlu) {
+    enlacesNavAlu.forEach((enlace) => {
+        enlace.addEventListener("click", (event) => {
+            let idMostrar = event.currentTarget.getAttribute("data-target");
+            let divMostrar = document.getElementById(idMostrar);
+            pestañas(divMostrar);
+        });
+    });
+}
+
 if (botonInsertarAlu) {
     botonInsertarAlu.addEventListener("click", añadirEntradaAluFinal);
 }
@@ -56,13 +67,16 @@ if (botonCerrarForm) {
 
 
 /*Eventos Profesor*/
-enlacesNav.forEach((enlace) => {
-    enlace.addEventListener("click", (event) => {
-        let idMostrar = event.currentTarget.getAttribute("data-target");
-        let divMostrar = document.getElementById(idMostrar);
-        pestañas(divMostrar);
+if (enlacesNavProf) {
+    enlacesNavProf.forEach((enlace) => {
+        enlace.addEventListener("click", (event) => {
+            let idMostrar = event.currentTarget.getAttribute("data-target");
+            let divMostrar = document.getElementById(idMostrar);
+            pestañas(divMostrar);
+        });
     });
-});
+}
+
 
 if (botonBorrar) {
     botonBorrar.addEventListener("click", borrarRegistroProf);
@@ -92,7 +106,11 @@ if (navCerrarSesion) {
     });
 }
 
-
+if (navCerrarSesionAlu) {
+    navCerrarSesionAlu.addEventListener("click", () => {
+        window.location.href = "./index.html";
+    });
+}
 /*FUNCIONES*/
 /*Funciones Index*/
 function validarProfesor() {
@@ -379,11 +397,11 @@ function borrarRegistroProf() {
 }
 
 function pestañas(pestañaMostrar) {
-    const contenidos = document.querySelectorAll("#heroVistaProfesor .contenido");
-    const pestañas = document.querySelectorAll("#barraLateralProf li");
-    const pestañaActiva = document.querySelector(`#barraLateralProf li[data-target='${pestañaMostrar.id}']`);
+    const contenidos = document.querySelectorAll(".contenido");
+    const pestañas = document.querySelectorAll("aside nav li");
+    const pestañaActiva = document.querySelector(`aside nav li[data-target='${pestañaMostrar.id}']`);
 
-    
+
     for (let pestaña of pestañas) {
         pestaña.classList.remove("active");
     }
