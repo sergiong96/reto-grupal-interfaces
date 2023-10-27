@@ -94,11 +94,13 @@ if (abrirAñadirAlumno) {
     });
 }
 
-abrirVerAlumno.forEach((imagen) => {
-    imagen.addEventListener("click", () => {
-        abrirAñadirAlu('ver');
+if (abrirVerAlumno) {
+    abrirVerAlumno.forEach((imagen) => {
+        imagen.addEventListener("click", () => {
+            abrirAñadirAlu('ver');
+        });
     });
-});
+}
 
 if (navCerrarSesion) {
     navCerrarSesion.addEventListener("click", () => {
@@ -111,6 +113,9 @@ if (navCerrarSesionAlu) {
         window.location.href = "./index.html";
     });
 }
+
+
+
 /*FUNCIONES*/
 /*Funciones Index*/
 function validarProfesor() {
@@ -319,13 +324,10 @@ function abrirAñadirAlu(accion) {
         nombAluDiv.value = nombAluTabla;
         boton.classList = "";
         boton.innerText = "Editar alumno";
+        boton.addEventListener("click", añadirEditarAlumnoProf);
 
     } else if (accion === "añadir") {
-        const valueInputs = document.querySelectorAll("#infoAlumno form input");
 
-        for (let i = 0; i < valueInputs.length; i++) {
-            valueInputs[i].value = "";
-        }
         boton.classList = "";
         boton.innerText = "Añadir alumno";
         boton.addEventListener("click", añadirEditarAlumnoProf);
@@ -345,13 +347,22 @@ function añadirEditarAlumnoProf() {
     const bodyTablaAlu = document.getElementById("bodyTablaAlu");
     const textoBoton = document.getElementById("añadirEditarAlu").innerText;
     const divAñadirEditar = document.getElementById("infoAlumno");
+    const checkBoxs = document.querySelectorAll("#bodyTablaAlu input[type='checkbox']");
+    let idCheckbox;
     let nombreAlu;
+
+  
+
+
     if (textoBoton === "Añadir alumno") {
+
         nombreAlu = document.getElementById("nombAluInfo").value;
         const trNuevo = document.createElement("tr");
         const tdCheck = document.createElement("td");
         const inputCheck = document.createElement("input");
         inputCheck.type = "checkbox";
+        inputCheck.id="A6";
+        trNuevo.id = "tr" + inputCheck.id;
         const tdImg = document.createElement("td");
         const img = document.createElement("img");
         img.src = "../static/img/otras/alumno.png";
@@ -367,16 +378,11 @@ function añadirEditarAlumnoProf() {
 
 
     } else if (textoBoton === "Editar alumno") {
-        const checkBoxs = document.querySelectorAll("#bodyTablaAlu input[type='checkbox']");
-        let idCheckbox;
-
-
         for (let i = 0; i < checkBoxs.length; i++) {
             if (checkBoxs[i].checked) {
                 idCheckbox = checkBoxs[i].id;
             }
         }
-
         let idFilaAlu = "tr" + idCheckbox;
         nombreAlu = document.querySelector("#infoAlumno form #nombAluInfo").value;
         document.querySelector(`tr#${idFilaAlu} td.nombre`).innerText = nombreAlu;
