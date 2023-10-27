@@ -2,6 +2,8 @@
 /*Variables Index*/
 const botonValidarAlu = document.querySelector("#heroIndex section button[data-type='validarAlumno']");
 const botonValidarProf = document.querySelector("#heroIndex section button[data-type='validarProfesor']");
+const inputEnterAlu = document.querySelector("#heroIndex #passA");
+const inputEnterProf = document.querySelector("#heroIndex #passP");
 
 
 /*Variables Alumno*/
@@ -28,10 +30,22 @@ const navCerrarSesion = document.querySelector("#barraLateralProf li[data-direct
 /*Eventos Index*/
 if (botonValidarAlu) {
     botonValidarAlu.addEventListener("click", validarAlumno);
+
+    inputEnterAlu.addEventListener("keyup", (event) => {
+        if (event.key === "Enter") {
+            validarAlumno();
+        }
+    });
 }
 
 if (botonValidarProf) {
     botonValidarProf.addEventListener("click", validarProfesor);
+
+    inputEnterProf.addEventListener("keyup", (event) => {
+        if (event.key === "Enter") {
+            validarProfesor();
+        }
+    });
 }
 
 
@@ -165,6 +179,8 @@ function abrirAñadirEntradaAlu() {
 }
 
 function añadirEntradaAluFinal() {
+    const divFormAñadir = document.getElementById("divAñadir");
+    const divOpacar = document.getElementById("opacar");
     let fecha = document.getElementById("fechaIn").value;
     let tipo = document.getElementById("tipoIn").value;
     let horas = document.getElementById("horasIn").value;
@@ -192,6 +208,8 @@ function añadirEntradaAluFinal() {
         tr.appendChild(td);
     }
     elementoInsertar.prepend(tr);
+    divFormAñadir.classList='';
+    divOpacar.classList='';
 }
 
 function cerrarFormAñadirAlu() {
@@ -266,6 +284,8 @@ function abrirEditarRegAlu() {
 }
 
 function editarRegAluFinal() {
+    const divFormAñadir = document.getElementById("divActualizar");
+    const divOpacar = document.getElementById("opacar");
     let inputsActualizar = document.querySelectorAll("#divActualizar form input");
     let filaActualizarSucia = document.querySelector("#divActualizar form").id.split("F")[0];
     let filaActualizarOk = document.getElementById(filaActualizarSucia);
@@ -284,11 +304,11 @@ function editarRegAluFinal() {
         filaActualizarOk.childNodes[i].textContent = valuesInputs[contador];
         contador++;
     }
-
+    divFormAñadir.classList='';
+    divOpacar.classList='';
 }
 
 function cerrarFormReg() {
-    console.log("cerrar");
     const divActualizar = document.getElementById("divActualizar");
     const divOpacar = document.getElementById("opacar");
 
@@ -351,7 +371,7 @@ function añadirEditarAlumnoProf() {
     let idCheckbox;
     let nombreAlu;
 
-  
+
 
 
     if (textoBoton === "Añadir alumno") {
@@ -361,7 +381,7 @@ function añadirEditarAlumnoProf() {
         const tdCheck = document.createElement("td");
         const inputCheck = document.createElement("input");
         inputCheck.type = "checkbox";
-        inputCheck.id="A6";
+        inputCheck.id = "A6";
         trNuevo.id = "tr" + inputCheck.id;
         const tdImg = document.createElement("td");
         const img = document.createElement("img");
