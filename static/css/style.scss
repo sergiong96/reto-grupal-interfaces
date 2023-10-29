@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import "./normalize.css";
 
+
 * {
     font-family: 'Roboto', sans-serif;
 }
+
 
 /*INDEX*/
 #backgroundIMG {
@@ -35,7 +37,8 @@
         input {
             margin-bottom: 1rem;
         }
-        button{
+
+        button {
             padding: 0.5rem;
             margin-top: 1rem;
         }
@@ -99,6 +102,7 @@ header {
     }
 }
 
+
 /*VISTA ALUMNO*/
 #heroVistaAlumno {
     display: grid;
@@ -156,8 +160,6 @@ header {
                 }
             }
         }
-
-
     }
 
     #mainContenidoAlu {
@@ -215,8 +217,6 @@ header {
                     input {
                         width: 12rem;
                     }
-
-
                 }
             }
 
@@ -226,7 +226,6 @@ header {
                 top: 0;
             }
         }
-
 
         #divActualizar {
             display: none;
@@ -263,7 +262,6 @@ header {
             }
         }
 
-
         #seccionTabla {
             flex-direction: column;
 
@@ -280,7 +278,6 @@ header {
                     &:nth-child(2n) {
                         background-color: lightgray;
                     }
-
                 }
 
                 tbody tr:nth-child(odd) {
@@ -299,7 +296,6 @@ header {
                 }
             }
 
-
             #botonesEdicion {
                 display: flex;
                 justify-content: space-evenly;
@@ -309,10 +305,7 @@ header {
                     margin: 0 17rem 0 0;
                 }
             }
-
-
         }
-
 
         #horas {
             flex-direction: column;
@@ -348,10 +341,7 @@ header {
                         }
                     }
                 }
-
             }
-
-
         }
 
         #infoEmpresa {
@@ -374,8 +364,6 @@ header {
                     text-align: left;
                 }
             }
-
-
         }
 
         #infoTutor {
@@ -399,14 +387,9 @@ header {
                     text-align: left;
                 }
             }
-
-
         }
-
     }
-
 }
-
 
 .block {
     display: block !important;
@@ -417,7 +400,6 @@ header {
 }
 
 
-
 /*VISTA PROFESOR*/
 #heroVistaProfesor {
     display: grid;
@@ -426,8 +408,6 @@ header {
     outline: 1px solid gray;
     height: 80vh;
     background-image: linear-gradient(to right, #9dc992, #e4f0de);
-
-
 
     #barraLateralProf {
         display: inline-flex;
@@ -477,8 +457,6 @@ header {
                 }
             }
         }
-
-
     }
 
     #mainContenido {
@@ -500,7 +478,6 @@ header {
 
         }
 
-
         #tablaAlumnos.active {
             display: flex;
             align-items: center;
@@ -519,7 +496,6 @@ header {
             #infoAlumno {
                 display: none;
 
-
                 form {
                     display: flex;
                     flex-direction: column;
@@ -530,12 +506,9 @@ header {
                     }
                 }
             }
-
         }
 
         #tablaActividades {
-
-
 
             h2 {
                 text-align: center;
@@ -545,19 +518,22 @@ header {
                 border-collapse: collapse;
                 text-align: center;
 
-                thead tr {
-                    background-color: lightgray;
+                thead {
+                    tr {
+                        background-color: lightgray;
+                    }
                 }
 
-                tbody tr:nth-child(even) {
-                    background-color: lightgray;
+                tbody {
+
+                    tr:nth-child(even) {
+                        background-color: lightgray;
+                    }
+
+                    tr:nth-child(odd) {
+                        background-color: #ffffff;
+                    }
                 }
-
-                tbody tr:nth-child(odd) {
-                    background-color: #ffffff;
-                }
-
-
 
                 th,
                 td {
@@ -565,9 +541,6 @@ header {
                     border: 1px solid black;
                 }
             }
-
-
-
         }
 
         #horasAlumnosProf {
@@ -594,7 +567,6 @@ header {
                     text-align: center;
                     border: 1px solid lightgray;
                 }
-
             }
         }
 
@@ -623,7 +595,6 @@ header {
                         text-align: center;
                         border: 1px solid black;
                     }
-
                 }
 
                 form {
@@ -645,10 +616,6 @@ header {
                     flex-direction: column;
                 }
             }
-
-
-
         }
-
     }
 }

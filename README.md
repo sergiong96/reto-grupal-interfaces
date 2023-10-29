@@ -1,6 +1,7 @@
-# HACER:
-Vista alumno:
-Editar registro, información de la empresa, información del tutor
+# TO-DO:
+Vista alumno: Solucionar destello que se ve al 
+añadir/editar entrada diario
 
-Vista profesor:
-Hacer todo
+Vista profesor: Mejorar pestaña empresas y 
+añadir funcionalidad (modificar empresa, añadir nueva empresa, 
+asignar empresa a alumno)

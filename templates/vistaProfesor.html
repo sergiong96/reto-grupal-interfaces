@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../static/img/icon/logoPEC.ico">
     <link rel="stylesheet" href="../static/css/style.css">
     <script src="https://kit.fontawesome.com/903082a171.js" crossorigin="anonymous"></script> <!--Fonts Awesome-->
     <title>Portal Profesor</title>
@@ -18,6 +19,7 @@
 
     <main id="heroVistaProfesor">
         <div id="opacar"></div>
+
         <aside id="barraLateralProf">
             <nav>
                 <ul>
@@ -43,7 +45,6 @@
                                 class="fa-solid fa-trash-can"></i></button>
                         <button type="button" data-type="editar" title="Editar alumno"><i
                                 class="fa-solid fa-pencil"></i></button>
-
                     </div>
                     <table>
                         <thead>
@@ -82,8 +83,7 @@
                         </tbody>
                     </table>
 
-                    <button type="button" data-type="añadir">Añadir Alumno</button>
-
+                    <button type="button" data-type="añadir" name="añadirAlu">Añadir Alumno</button>
                 </article>
 
                 <article id="infoAlumno">
@@ -109,6 +109,7 @@
             </section>
 
             <section id="tablaActividades" class="contenido">
+
                 <h2>Actividades Diarias</h2>
                 <p>Alumno: Nombre alumno</p>
                 <table>
@@ -121,6 +122,7 @@
                             <th>Observaciones/incidencias</th>
                         </tr>
                     </thead>
+
                     <tbody id="cuerpoTabla">
                         <tr id="R5tr">
                             <td>15/10/2023</td>
@@ -158,8 +160,8 @@
                             <td>-</td>
                         </tr>
                     </tbody>
-
                 </table>
+
             </section>
 
             <section id="horasAlumnosProf" class="contenido">
@@ -198,6 +200,7 @@
                             </table>
                         </td>
                     </tr>
+
                     <tr>
                         <td>Juan Pérez Navarro</td>
                         <td>
@@ -225,6 +228,7 @@
                             </table>
                         </td>
                     </tr>
+
                     <tr>
                         <td>Cristian Rama García</td>
                         <td>
@@ -252,6 +256,7 @@
                             </table>
                         </td>
                     </tr>
+
                     <tr>
                         <td>Julian Muñoz Maldonado</td>
                         <td>
@@ -279,48 +284,37 @@
                             </table>
                         </td>
                     </tr>
+
                     <tr>
                         <td>Sergio Torres Paz</td>
                         <td>
                             <table>
-                                <thead>
-                                    <tr>
-                                        <th>Horas realizadas</th>
-                                        <th>Horas pendientes</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-
-                                        <td>20</td>
-                                        <td>140</td>
-                                    </tr>
-                                </tbody>
+                                <tr>
+                                    <th>Horas realizadas</th>
+                                    <th>Horas pendientes</th>
+                                </tr>
+                                <tr>
+                                    <td>20</td>
+                                    <td>140</td>
+                                </tr>
                             </table>
                         </td>
                         <td>
                             <table>
-                                <thead>
-                                    <tr>
-                                        <th>Horas realizadas</th>
-                                        <th>Horas pendientes</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>0</td>
-                                        <td>160</td>
-                                    </tr>
-                                </tbody>
+                                <tr>
+                                    <th>Horas realizadas</th>
+                                    <th>Horas pendientes</th>
+                                </tr>
+                                <tr>
+                                    <td>0</td>
+                                    <td>160</td>
+                                </tr>
                             </table>
                         </td>
                     </tr>
                 </table>
 
             </section>
-
-
-
 
             <section id="empresasProf" class="contenido">
 
@@ -351,6 +345,7 @@
                             <td>YO PONGO EL HIELO</td>
                         </tr>
                     </table>
+
                     <form>
                         <label for="alu">Seleccione un alumno</label>
                         <select name="alumnoEm" id="alu">
@@ -391,10 +386,8 @@
             </section>
 
         </section>
+        
     </main>
-
-
-
 
     <script type="text/javascript" src="../static/js/app.js"></script>
 </body>

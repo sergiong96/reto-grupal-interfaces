@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../static/img/icon/logoPEC.ico">
     <link rel="stylesheet" href="../static/css/style.css">
     <title>PECesur</title>
 </head>
@@ -20,8 +21,8 @@
                 como profesor</p>
         </div>
     </header>
-    <main id="heroIndex">
 
+    <main id="heroIndex">
         <section>
             <h3>Si eres profesor</h3>
             <form action="#" method="POST" id="profeForm">
@@ -31,11 +32,11 @@
                 <label for="passP">Contraseña</label>
                 <input type="password" id="passP" name="passwordProfesor">
 
-                <button type="button" data-type="validarProfesor">Iniciar Sesión</button>
+                <button type="button" data-type="validarProfesor" name="loginProf">Iniciar Sesión</button>
                 <p id="credencialesP"></p>
             </form>
-
         </section>
+
         <section>
             <h3>Si eres alumno</h3>
             <form action="#" method="POST" id="aluForm">
@@ -45,16 +46,17 @@
                 <label for="passA">Contraseña</label>
                 <input type="password" id="passA" name="passwordAlumno">
 
-                <button type="button" data-type="validarAlumno">Iniciar Sesión</button>
+                <button type="button" data-type="validarAlumno" name="loginAlu">Iniciar Sesión</button>
                 <p id="credencialesA"></p>
-
             </form>
-
         </section>
+
     </main>
+
     <footer>
         <p>&copy; Rafael Quevedo Ibáñez - Iker Roca Pendón - Sergio Navarro González | 2023 | Diseño de Interfaces Web</p>
     </footer>
+
     <script type="text/javascript" src="../static/js/app.js"></script>
 </body>
 

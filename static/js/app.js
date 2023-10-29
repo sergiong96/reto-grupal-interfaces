@@ -5,7 +5,6 @@ const botonValidarProf = document.querySelector("#heroIndex section button[data-
 const inputEnterAlu = document.querySelector("#heroIndex #passA");
 const inputEnterProf = document.querySelector("#heroIndex #passP");
 
-
 /*Variables Alumno*/
 const enlacesNavAlu = document.querySelectorAll("#barraLateralAlu li[data-target]");
 const botonAbrirAñadirAlu = document.querySelector("#seccionTabla #botonesEdicion button[data-type='abrirAñadir']");
@@ -63,18 +62,23 @@ if (enlacesNavAlu) {
 if (botonInsertarAlu) {
     botonInsertarAlu.addEventListener("click", añadirEntradaAluFinal);
 }
+
 if (botonCerrarActualizar) {
     botonCerrarActualizar.addEventListener("click", cerrarFormReg);
 }
+
 if (botonBorrarAlumno) {
     botonBorrarAlumno.addEventListener("click", borrarRegistroAlu);
 }
+
 if (botonEditarAlumno) {
     botonEditarAlumno.addEventListener("click", abrirEditarRegAlu);
 }
+
 if (botonAbrirAñadirAlu) {
     botonAbrirAñadirAlu.addEventListener("click", abrirAñadirEntradaAlu);
 }
+
 if (botonCerrarForm) {
     botonCerrarForm.addEventListener("click", cerrarFormAñadirAlu);
 }
@@ -90,7 +94,6 @@ if (enlacesNavProf) {
         });
     });
 }
-
 
 if (botonBorrar) {
     botonBorrar.addEventListener("click", borrarRegistroProf);
@@ -159,7 +162,7 @@ function validarAlumno() {
 
 
 /*Funciones Alumno*/
-//Nueva entrada Diario
+//Abrir formulario nueva entrada diario
 function abrirAñadirEntradaAlu() {
     const divFormAñadir = document.getElementById("divAñadir");
     const divOpacar = document.getElementById("opacar");
@@ -178,6 +181,7 @@ function abrirAñadirEntradaAlu() {
     }
 }
 
+//Añadir nueva entrada al diario
 function añadirEntradaAluFinal() {
     const divFormAñadir = document.getElementById("divAñadir");
     const divOpacar = document.getElementById("opacar");
@@ -212,6 +216,7 @@ function añadirEntradaAluFinal() {
     divOpacar.classList='';
 }
 
+//Cerrar formulario de nueva entrada
 function cerrarFormAñadirAlu() {
     const divFormAñadir = document.getElementById("divAñadir");
     const divOpacar = document.getElementById("opacar");
@@ -233,7 +238,7 @@ function borrarRegistroAlu() {
     }
 }
 
-//Editar entrada diario
+//Abrir formulario para editar entrada diario
 function abrirEditarRegAlu() {
     let checkBoxs = document.querySelectorAll("input[type='checkbox']");
     const formActualizar = document.querySelector("#divActualizar form")
@@ -262,7 +267,6 @@ function abrirEditarRegAlu() {
         formActualizar.appendChild(input);
     }
 
-
     buttonActualizar.type = "button";
     buttonActualizar.setAttribute("onclick", "editarRegAluFinal()");
     formActualizar.id = filaActualizar.id + "F";
@@ -280,9 +284,9 @@ function abrirEditarRegAlu() {
     setTimeout(() => {
         divActualizar.classList.add("active");
     }, 0);
-
 }
 
+//Editar entrada del diario
 function editarRegAluFinal() {
     const divFormAñadir = document.getElementById("divActualizar");
     const divOpacar = document.getElementById("opacar");
@@ -291,7 +295,6 @@ function editarRegAluFinal() {
     let filaActualizarOk = document.getElementById(filaActualizarSucia);
     let contador = 0;
     let valuesInputs = [];
-
 
     for (let valor of inputsActualizar) {
         valuesInputs[contador] = valor.value;
@@ -308,6 +311,7 @@ function editarRegAluFinal() {
     divOpacar.classList='';
 }
 
+//Cerrar formulario editar entrada diario
 function cerrarFormReg() {
     const divActualizar = document.getElementById("divActualizar");
     const divOpacar = document.getElementById("opacar");
@@ -319,9 +323,8 @@ function cerrarFormReg() {
 }
 
 
-
-
 /*Funciones Profesor*/
+//Abrir formulario para añadir, ver o editar alumnos
 function abrirAñadirAlu(accion) {
     const divFormAñadir = document.getElementById("infoAlumno");
     const boton = document.getElementById("añadirEditarAlu");
@@ -363,6 +366,7 @@ function abrirAñadirAlu(accion) {
     }, 0);
 }
 
+//Función para añadir alumnos a la tabla o editar los ya existentes
 function añadirEditarAlumnoProf() {
     const bodyTablaAlu = document.getElementById("bodyTablaAlu");
     const textoBoton = document.getElementById("añadirEditarAlu").innerText;
@@ -370,9 +374,6 @@ function añadirEditarAlumnoProf() {
     const checkBoxs = document.querySelectorAll("#bodyTablaAlu input[type='checkbox']");
     let idCheckbox;
     let nombreAlu;
-
-
-
 
     if (textoBoton === "Añadir alumno") {
 
@@ -396,13 +397,13 @@ function añadirEditarAlumnoProf() {
         trNuevo.appendChild(tdNomb);
         bodyTablaAlu.prepend(trNuevo);
 
-
     } else if (textoBoton === "Editar alumno") {
         for (let i = 0; i < checkBoxs.length; i++) {
             if (checkBoxs[i].checked) {
                 idCheckbox = checkBoxs[i].id;
             }
         }
+
         let idFilaAlu = "tr" + idCheckbox;
         nombreAlu = document.querySelector("#infoAlumno form #nombAluInfo").value;
         document.querySelector(`tr#${idFilaAlu} td.nombre`).innerText = nombreAlu;
@@ -422,6 +423,7 @@ function borrarRegistroProf() {
     }
 }
 
+//Sistema de pestañas tanto del portal profesor como del alumno
 function pestañas(pestañaMostrar) {
     const contenidos = document.querySelectorAll(".contenido");
     const pestañas = document.querySelectorAll("aside nav li");
