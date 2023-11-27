@@ -1,0 +1,284 @@
+#heroVistaProfesor {
+    display: grid;
+    grid-template-columns: 15rem auto;
+    grid-template-rows: auto;
+    outline: 1px solid gray;
+    height: 80vh;
+    background-image: linear-gradient(to right, #9dc992, #e4f0de);
+
+    #barraLateralProf {
+        display: inline-flex;
+        grid-column: 1;
+        grid-row: 1;
+        margin: auto 0;
+
+        nav {
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    border: 1px solid gray;
+                    padding: 2rem;
+                    cursor: pointer;
+                    background-color: gainsboro;
+
+                    &.active {
+                        background-color: lightgreen;
+                    }
+
+                    &:hover {
+                        box-shadow: 2px 0px 2px gray;
+                        transform: scale(1.03);
+                    }
+
+                    a {
+                        width: 100%;
+                        height: 100%;
+                        text-decoration: none;
+                        color: black;
+                    }
+
+                    &:nth-child(5) {
+                        background-color: rgb(255, 90, 90);
+                    }
+
+                    &:nth-child(5):hover a {
+                        color: white;
+                    }
+
+                    i {
+                        margin-right: 0.2rem;
+                    }
+                }
+            }
+        }
+    }
+
+    #mainContenido {
+        grid-column: 2;
+        grid-row: 1;
+        margin: auto auto;
+
+        .contenido {
+            margin: 2rem 0;
+            padding: 1rem;
+            display: none;
+        }
+
+        .contenido.active {
+            display: block;
+            border: 1px solid gray;
+            margin: 2rem 0;
+            padding: 1rem;
+
+        }
+
+        #tablaAlumnos.active {
+            display: flex;
+            align-items: center;
+
+            article:nth-child(1) {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                &>div {
+                    button {
+                        width: 3rem;
+                        height: 2rem;
+                        margin: 0 0.2rem;
+                        cursor: pointer;
+
+                        i {
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+
+                &>table {
+                    input[type=checkbox] {
+                        width: 1rem;
+                        height: 1rem;
+                    }
+                }
+            }
+
+            img {
+                width: 3rem;
+                cursor: pointer;
+            }
+
+            #infoAlumno {
+                display: none;
+                border-left: 1px solid black;
+                margin-left: 2rem;
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 2rem;
+
+                    input {
+                        margin-bottom: 1rem;
+                    }
+
+                    #añadirEditarAlu {
+                        margin-top: 1rem;
+                    }
+                }
+            }
+        }
+
+        #tablaActividades {
+
+            h2 {
+                text-align: center;
+            }
+
+            table {
+                border-collapse: collapse;
+                text-align: center;
+
+                thead {
+                    tr {
+                        background-color: lightgray;
+                    }
+                }
+
+                tbody {
+
+                    tr:nth-child(even) {
+                        background-color: lightgray;
+                    }
+
+                    tr:nth-child(odd) {
+                        background-color: #ffffff;
+                    }
+                }
+
+                th,
+                td {
+                    padding: 0.5rem;
+                    border: 1px solid black;
+                }
+            }
+        }
+
+        #horasAlumnosProf {
+            text-align: center;
+            background-color: white;
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+
+                tr:nth-child(odd) {
+                    background-color: lightgray;
+                    border: 1px solid lightgray
+                }
+
+                tr:nth-child(even) {
+                    background-color: #ffffff;
+                }
+
+                th,
+                td {
+                    padding: 0.2rem;
+                    border: 1px solid #dddddd;
+                    text-align: center;
+                    border: 1px solid lightgray;
+                }
+            }
+        }
+
+        #empresasProf {
+            &>div {
+                display: flex;
+
+                #empresasAsignadas {
+                    display: flex;
+
+                    table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        margin-bottom: 10px;
+
+                        tr:nth-child(odd) {
+                            background-color: lightgray;
+                        }
+
+                        tr:nth-child(even) {
+                            background-color: #ffffff;
+                        }
+
+                        th,
+                        td {
+                            padding: 6px;
+                            border: 1px solid #dddddd;
+                            text-align: center;
+                            border: 1px solid black;
+                        }
+                    }
+
+                    form {
+                        display: flex;
+                        flex-direction: column;
+                        margin-left: 2rem;
+
+                        select {
+                            margin-bottom: 1rem;
+                        }
+
+                        button {
+                            margin-top: 10px;
+                        }
+                    }
+                }
+
+                #infoEmpresas {
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 4rem;
+                    padding-left: 4rem;
+                    border-left: 1px solid;
+
+                    button:not([data-type='cerrar']) {
+                        margin: 0.5rem auto 2rem auto;
+
+                        i {
+                            margin-right: 0.5rem;
+                        }
+                    }
+
+                    dialog {
+                        &>button{
+                            margin-bottom: 1rem;
+                        }
+                        form {
+                            input {
+                                margin-bottom: 1rem;
+                            }
+                        }
+                    }
+
+                    form {
+                        display: flex;
+                        flex-direction: column;
+
+                        &>div {
+                            display: flex;
+                            justify-content: space-around;
+                        }
+
+                        select {
+                            margin-bottom: 1rem;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}

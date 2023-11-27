@@ -1,0 +1,301 @@
+#heroVistaAlumno {
+    display: grid;
+    grid-template-columns: 15rem auto;
+    grid-template-rows: auto;
+    height: 80vh;
+    outline: 1px solid gray;
+    background-image: linear-gradient(to right, #9dc992, #e4f0de);
+
+    #barraLateralAlu {
+        display: inline-flex;
+        grid-column: 1;
+        grid-row: 1;
+        margin: auto 0;
+
+        nav {
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    border: 1px solid gray;
+                    padding: 2rem;
+                    cursor: pointer;
+                    background-color: gainsboro;
+
+                    &.active {
+                        background-color: lightgreen;
+                    }
+
+                    &:hover {
+                        box-shadow: 2px 0px 2px gray;
+                        transform: scale(1.03);
+                    }
+
+                    a {
+                        width: 100%;
+                        height: 100%;
+                        text-decoration: none;
+                        color: black;
+                    }
+
+                    &:nth-child(5) {
+                        background-color: rgb(255, 90, 90);
+                    }
+
+                    &:nth-child(5):hover a {
+                        color: white;
+                    }
+
+                    i {
+                        margin-right: 0.2rem;
+                    }
+                }
+            }
+        }
+    }
+
+    #mainContenidoAlu {
+        grid-column: 2;
+        grid-row: 1;
+        margin: auto auto;
+
+        .contenido {
+            display: none;
+        }
+
+        .contenido.active {
+            display: flex;
+        }
+
+        #divAñadir {
+            overflow: hidden;
+            transition: opacity 800ms ease-in-out;
+            border: 1px solid black;
+            opacity: 0;
+            padding: 1rem;
+            z-index: 150;
+
+            &.active {
+                transition: opacity 800ms ease-in-out;
+                background-color: #a8cda8;
+                opacity: 1;
+            }
+
+            #buttonAñadir {
+                margin-top: 1rem;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                opacity: 1;
+
+                div {
+                    display: inline-block;
+
+                    label {
+                        display: inline-block;
+                        width: 10rem;
+                    }
+
+                    input {
+                        width: 12rem;
+                    }
+                }
+            }
+
+            &>button {
+                margin-bottom: 1rem;
+            }
+        }
+
+        #divActualizar {
+            z-index: 9999;
+            background-color: #a8cda8;
+            opacity: 0;
+            transition: opacity 800ms ease-in-out;
+
+            &>p {
+                margin: 0;
+                text-align: center;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                width: 15rem;
+                padding: 2rem;
+
+                input {
+                    &:nth-child(5) {
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+
+            button:nth-child(1) {
+                margin: 0.2rem 17rem 0 0;
+            }
+
+            &.active {
+                opacity: 1;
+                transition: opacity 800ms ease-in-out;
+            }
+        }
+
+        #seccionTabla {
+            flex-direction: column;
+
+            table {
+                border-collapse: collapse;
+                margin: 0 auto;
+                width: 50%;
+
+                thead {
+                    background-color: lightgray;
+                }
+
+                tr {
+                    &:nth-child(2n) {
+                        background-color: lightgray;
+                    }
+                }
+
+                tbody tr:nth-child(odd) {
+                    background-color: #ffffff;
+                }
+
+                th {
+                    border: 1px solid black;
+                    padding: 0.5rem 1rem;
+                }
+
+                td {
+                    text-align: center;
+                    border: 1px solid black;
+                    padding: 0.5rem 1rem;
+                }
+            }
+
+            #botonesEdicion {
+                display: flex;
+                justify-content: space-evenly;
+                margin-bottom: 1rem;
+
+
+                &>div {
+                    margin: 0px 35% 0 0;
+                    display: flex;
+
+                    button {
+                        width: 3rem;
+                        height: 2rem;
+                        margin: 0 0.5rem;
+                        cursor: pointer;
+
+                        i {
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+
+                &>button#añadirEntrada {
+                    width: 12rem;
+                    cursor: pointer;
+
+                    i {
+                        margin-right: 0.5rem;
+                    }
+
+                    &:hover i {
+                        color: #9dc992;
+                    }
+                }
+            }
+        }
+
+        #horas {
+            flex-direction: column;
+            align-items: center;
+
+            div {
+                display: flex;
+                justify-content: center;
+
+                article {
+                    margin: 0 2rem;
+                    text-align: center;
+
+                    table {
+                        border-collapse: collapse;
+
+                        thead {
+                            tr {
+                                background-color: lightgray;
+                            }
+                        }
+
+                        tbody {
+                            tr {
+                                background-color: #ffffff;
+                            }
+                        }
+
+                        th,
+                        td {
+                            padding: 0.5rem;
+                            border: 1px solid black;
+                        }
+                    }
+                }
+            }
+        }
+
+        #infoEmpresa {
+            flex-direction: column;
+            margin: 5rem 0;
+            align-items: center;
+
+            #tablaEmpresa {
+                tr:nth-child(odd) {
+                    background-color: white;
+                }
+
+                tr:nth-child(even) {
+                    background-color: #ebe9e8;
+                }
+
+                th,
+                td {
+                    padding: 0.3rem;
+                    text-align: left;
+                }
+            }
+        }
+
+        #infoTutor {
+            flex-direction: column;
+            margin: 5rem 0;
+            align-items: center;
+
+            #tablaTutor {
+
+                tr:nth-child(even) {
+                    background-color: #ebe9e8;
+                }
+
+                tr:nth-child(odd) {
+                    background-color: white;
+                }
+
+                th,
+                td {
+                    padding: 0.3rem;
+                    text-align: left;
+                }
+            }
+        }
+    }
+}

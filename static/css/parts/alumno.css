@@ -1,0 +1,223 @@
+@charset "UTF-8";
+#heroVistaAlumno {
+  display: grid;
+  grid-template-columns: 15rem auto;
+  grid-template-rows: auto;
+  height: 80vh;
+  outline: 1px solid gray;
+  background-image: linear-gradient(to right, #9dc992, #e4f0de);
+}
+#heroVistaAlumno #barraLateralAlu {
+  display: inline-flex;
+  grid-column: 1;
+  grid-row: 1;
+  margin: auto 0;
+}
+#heroVistaAlumno #barraLateralAlu nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#heroVistaAlumno #barraLateralAlu nav ul li {
+  border: 1px solid gray;
+  padding: 2rem;
+  cursor: pointer;
+  background-color: gainsboro;
+}
+#heroVistaAlumno #barraLateralAlu nav ul li.active {
+  background-color: lightgreen;
+}
+#heroVistaAlumno #barraLateralAlu nav ul li:hover {
+  box-shadow: 2px 0px 2px gray;
+  transform: scale(1.03);
+}
+#heroVistaAlumno #barraLateralAlu nav ul li a {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: black;
+}
+#heroVistaAlumno #barraLateralAlu nav ul li:nth-child(5) {
+  background-color: rgb(255, 90, 90);
+}
+#heroVistaAlumno #barraLateralAlu nav ul li:nth-child(5):hover a {
+  color: white;
+}
+#heroVistaAlumno #barraLateralAlu nav ul li i {
+  margin-right: 0.2rem;
+}
+#heroVistaAlumno #mainContenidoAlu {
+  grid-column: 2;
+  grid-row: 1;
+  margin: auto auto;
+}
+#heroVistaAlumno #mainContenidoAlu .contenido {
+  display: none;
+}
+#heroVistaAlumno #mainContenidoAlu .contenido.active {
+  display: flex;
+}
+#heroVistaAlumno #mainContenidoAlu #divAñadir {
+  display: none;
+  overflow: hidden;
+  position: absolute;
+  left: 35%;
+  top: 30%;
+  width: 0;
+  height: 0;
+  transition: width 1s ease-in-out, height 1s ease-in-out, opacity 1s ease-in-out, background-color 1s ease-in-out;
+  border: 1px solid black;
+  opacity: 0;
+  padding: 1rem;
+  z-index: 150;
+}
+#heroVistaAlumno #mainContenidoAlu #divAñadir.active {
+  width: 25rem;
+  height: 10rem;
+  transition: width 1s ease-in-out, height 1s ease-in-out, opacity 1s ease-in-out, background-color 1s ease-in-out;
+  background-color: #a8cda8;
+  opacity: 1;
+}
+#heroVistaAlumno #mainContenidoAlu #divAñadir #buttonAñadir {
+  margin-top: 1rem;
+}
+#heroVistaAlumno #mainContenidoAlu #divAñadir form {
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+}
+#heroVistaAlumno #mainContenidoAlu #divAñadir form div {
+  display: inline-block;
+}
+#heroVistaAlumno #mainContenidoAlu #divAñadir form div label {
+  display: inline-block;
+  width: 10rem;
+}
+#heroVistaAlumno #mainContenidoAlu #divAñadir form div input {
+  width: 12rem;
+}
+#heroVistaAlumno #mainContenidoAlu #divAñadir > button {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+#heroVistaAlumno #mainContenidoAlu #divActualizar {
+  display: none;
+  position: absolute;
+  top: 30%;
+  left: 43%;
+  z-index: 9999;
+  background-color: #a8cda8;
+  opacity: 0;
+  transition: opacity 800ms ease-in-out;
+}
+#heroVistaAlumno #mainContenidoAlu #divActualizar form {
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
+  padding: 2rem;
+}
+#heroVistaAlumno #mainContenidoAlu #divActualizar form input:nth-child(5) {
+  margin-bottom: 1rem;
+}
+#heroVistaAlumno #mainContenidoAlu #divActualizar button:nth-child(1) {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+#heroVistaAlumno #mainContenidoAlu #divActualizar.active {
+  opacity: 1;
+  transition: opacity 800ms ease-in-out;
+}
+#heroVistaAlumno #mainContenidoAlu #seccionTabla {
+  flex-direction: column;
+}
+#heroVistaAlumno #mainContenidoAlu #seccionTabla table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  width: 50%;
+}
+#heroVistaAlumno #mainContenidoAlu #seccionTabla table thead {
+  background-color: lightgray;
+}
+#heroVistaAlumno #mainContenidoAlu #seccionTabla table tr:nth-child(2n) {
+  background-color: lightgray;
+}
+#heroVistaAlumno #mainContenidoAlu #seccionTabla table tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+#heroVistaAlumno #mainContenidoAlu #seccionTabla table th {
+  border: 1px solid black;
+  padding: 0.5rem 1rem;
+}
+#heroVistaAlumno #mainContenidoAlu #seccionTabla table td {
+  text-align: center;
+  border: 1px solid black;
+  padding: 0.5rem 1rem;
+}
+#heroVistaAlumno #mainContenidoAlu #seccionTabla #botonesEdicion {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 1rem;
+}
+#heroVistaAlumno #mainContenidoAlu #seccionTabla #botonesEdicion > div {
+  margin: 0 17rem 0 0;
+}
+#heroVistaAlumno #mainContenidoAlu #horas {
+  flex-direction: column;
+  align-items: center;
+}
+#heroVistaAlumno #mainContenidoAlu #horas div {
+  display: flex;
+  justify-content: center;
+}
+#heroVistaAlumno #mainContenidoAlu #horas div article {
+  margin: 0 2rem;
+  text-align: center;
+}
+#heroVistaAlumno #mainContenidoAlu #horas div article table {
+  border-collapse: collapse;
+}
+#heroVistaAlumno #mainContenidoAlu #horas div article table thead tr {
+  background-color: lightgray;
+}
+#heroVistaAlumno #mainContenidoAlu #horas div article table tbody tr {
+  background-color: #ffffff;
+}
+#heroVistaAlumno #mainContenidoAlu #horas div article table th,
+#heroVistaAlumno #mainContenidoAlu #horas div article table td {
+  padding: 0.5rem;
+  border: 1px solid black;
+}
+#heroVistaAlumno #mainContenidoAlu #infoEmpresa {
+  flex-direction: column;
+  margin: 5rem 0;
+  align-items: center;
+}
+#heroVistaAlumno #mainContenidoAlu #infoEmpresa #tablaEmpresa tr:nth-child(odd) {
+  background-color: white;
+}
+#heroVistaAlumno #mainContenidoAlu #infoEmpresa #tablaEmpresa tr:nth-child(even) {
+  background-color: #ebe9e8;
+}
+#heroVistaAlumno #mainContenidoAlu #infoEmpresa #tablaEmpresa th,
+#heroVistaAlumno #mainContenidoAlu #infoEmpresa #tablaEmpresa td {
+  padding: 0.3rem;
+  text-align: left;
+}
+#heroVistaAlumno #mainContenidoAlu #infoTutor {
+  flex-direction: column;
+  margin: 5rem 0;
+  align-items: center;
+}
+#heroVistaAlumno #mainContenidoAlu #infoTutor #tablaTutor tr:nth-child(even) {
+  background-color: #ebe9e8;
+}
+#heroVistaAlumno #mainContenidoAlu #infoTutor #tablaTutor tr:nth-child(odd) {
+  background-color: white;
+}
+#heroVistaAlumno #mainContenidoAlu #infoTutor #tablaTutor th,
+#heroVistaAlumno #mainContenidoAlu #infoTutor #tablaTutor td {
+  padding: 0.3rem;
+  text-align: left;
+}/*# sourceMappingURL=alumno.css.map */

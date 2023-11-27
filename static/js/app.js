@@ -22,11 +22,17 @@ const abrirEditarAlumno = document.querySelector("#heroVistaProfesor #tablaAlumn
 const abrirAñadirAlumno = document.querySelector("#heroVistaProfesor #tablaAlumnos button[data-type='añadir']");
 const abrirVerAlumno = document.querySelectorAll("#heroVistaProfesor #tablaAlumnos #bodyTablaAlu td img");
 const navCerrarSesion = document.querySelector("#barraLateralProf li[data-direction]");
-
+const btnAñadirEmpresa = document.querySelector("#empresasProf #infoEmpresas > button[data-type='añadir']");
+const btnEditarEmpresa = document.querySelector("#empresasProf #infoEmpresas button[data-type='editar']");
+const btnCerrarAñadir = document.querySelector("#infoEmpresas dialog#nuevaEmpresa button[data-type='cerrar']");
+const btnAsignarEmpresa = document.querySelector("#heroVistaProfesor #empresasAsignadas form button");
+const btnVerEditarEmpresa = document.querySelectorAll("#empresasProf #infoEmpresas > form > div button");
+const btnCerrarDialogEmpresa = document.querySelector("#infoEmpresas #editarVerEmrpesa button[data-type='cerrar']");
 
 
 /*EVENTOS*/
-/*Eventos Index*/
+/*EVENTOS INDEX*/
+//Validar alumno al pulsar enter sobre el input password
 if (botonValidarAlu) {
     botonValidarAlu.addEventListener("click", validarAlumno);
 
@@ -37,6 +43,7 @@ if (botonValidarAlu) {
     });
 }
 
+//Validar profesor al pulsar enter sobre el input password
 if (botonValidarProf) {
     botonValidarProf.addEventListener("click", validarProfesor);
 
@@ -48,7 +55,8 @@ if (botonValidarProf) {
 }
 
 
-/*Eventos Alumno*/
+/*EVENTOS ALUMNO*/
+//Pestañas portal alumno
 if (enlacesNavAlu) {
     enlacesNavAlu.forEach((enlace) => {
         enlace.addEventListener("click", (event) => {
@@ -59,32 +67,47 @@ if (enlacesNavAlu) {
     });
 }
 
+//Cerrar sesión alumno
+if (navCerrarSesionAlu) {
+    navCerrarSesionAlu.addEventListener("click", () => {
+        window.location.href = "./index.html";
+    });
+}
+
+//Añadir entrada diario alumno
 if (botonInsertarAlu) {
     botonInsertarAlu.addEventListener("click", añadirEntradaAluFinal);
 }
 
+//Cerrar elemento actualizar alumno
 if (botonCerrarActualizar) {
     botonCerrarActualizar.addEventListener("click", cerrarFormReg);
 }
 
+//Eliminar entrada diario alumno
 if (botonBorrarAlumno) {
     botonBorrarAlumno.addEventListener("click", borrarRegistroAlu);
 }
 
+//Editar entarda diario alumno
 if (botonEditarAlumno) {
     botonEditarAlumno.addEventListener("click", abrirEditarRegAlu);
 }
 
+//Abrir elemento añadir entrada diario alumno
 if (botonAbrirAñadirAlu) {
     botonAbrirAñadirAlu.addEventListener("click", abrirAñadirEntradaAlu);
 }
 
+//Cerrar elemento añadir entrada diario alumno
 if (botonCerrarForm) {
     botonCerrarForm.addEventListener("click", cerrarFormAñadirAlu);
 }
 
 
-/*Eventos Profesor*/
+
+/*EVENTOS PROFESOR*/
+//Sistema pestañas portal profesor
 if (enlacesNavProf) {
     enlacesNavProf.forEach((enlace) => {
         enlace.addEventListener("click", (event) => {
@@ -95,22 +118,26 @@ if (enlacesNavProf) {
     });
 }
 
+//Eliminar alumno portal profesor
 if (botonBorrar) {
     botonBorrar.addEventListener("click", borrarRegistroProf);
 }
 
+//Abrir elemento editar alumno
 if (abrirEditarAlumno) {
     abrirEditarAlumno.addEventListener("click", () => {
         abrirAñadirAlu('editar');
     });
 }
 
+//Abrir elemento añadir alumno
 if (abrirAñadirAlumno) {
     abrirAñadirAlumno.addEventListener("click", () => {
         abrirAñadirAlu('añadir');
     });
 }
 
+//Abrir elemento ver alumno
 if (abrirVerAlumno) {
     abrirVerAlumno.forEach((imagen) => {
         imagen.addEventListener("click", () => {
@@ -119,18 +146,70 @@ if (abrirVerAlumno) {
     });
 }
 
+//Cerrar sesión portal profesor
 if (navCerrarSesion) {
     navCerrarSesion.addEventListener("click", () => {
         window.location.href = "./index.html";
     });
 }
 
-if (navCerrarSesionAlu) {
-    navCerrarSesionAlu.addEventListener("click", () => {
-        window.location.href = "./index.html";
+
+//Abrir dialog añadir empresa
+if (btnAñadirEmpresa) {
+    btnAñadirEmpresa.addEventListener("click", () => {
+        const dialogAñadir = document.querySelector("#empresasProf #infoEmpresas dialog#nuevaEmpresa");
+        const divOpacar = document.getElementById("opacar");
+        const body = document.body;
+
+        dialogAñadir.showModal();
+        divOpacar.classList.add("block");
+        setTimeout(() => {
+            divOpacar.classList.add("active");
+        }, 0);
+
+        body.classList.add("opacado");
     });
 }
 
+//Cerrar dialog añadir empresa
+if (btnCerrarAñadir) {
+    const dialogAñadir = document.querySelector("#empresasProf #infoEmpresas dialog#nuevaEmpresa");
+    btnCerrarAñadir.addEventListener("click", () => {
+        cerrarDialogProf(dialogAñadir);
+    });
+}
+
+//Asignar empresas a alumnos portal profesor 
+if (btnAsignarEmpresa) {
+    btnAsignarEmpresa.addEventListener("click", () => {
+        asignarEmpresaProf();
+    });
+}
+
+//Botones editar/ver empresas portal profesor
+if (btnVerEditarEmpresa) {
+    btnVerEditarEmpresa.forEach((button) => {
+        button.addEventListener("click", (event) => {
+            if (event.currentTarget.getAttribute("data-type") === "editar") {
+                verEditarEmpresa("editar");
+            } else {
+                verEditarEmpresa();
+            }
+        });
+    });
+}
+
+//Botón cerrar dialog ver/editar empresas
+if (btnCerrarDialogEmpresa) {
+    btnCerrarDialogEmpresa.addEventListener("click", (event) => {
+        const dialogCerrar = event.currentTarget.closest("dialog");
+        const divOpacar = document.getElementById("opacar");
+        const body = document.body;
+        divOpacar.classList = "";
+        body.classList.remove("opacado");
+        dialogCerrar.close();
+    });
+}
 
 
 /*FUNCIONES*/
@@ -166,23 +245,23 @@ function validarAlumno() {
 function abrirAñadirEntradaAlu() {
     const divFormAñadir = document.getElementById("divAñadir");
     const divOpacar = document.getElementById("opacar");
+    const body = document.body;
 
-    if (!divFormAñadir.classList.contains("active") && !divOpacar.classList.contains("active")) {
-        divFormAñadir.classList.add("block");
-        setTimeout(() => {
-            divFormAñadir.classList.add("active");
-        }, 0);
-
-
+    if (!divOpacar.classList.contains("active")) {
         divOpacar.classList.add("block");
         setTimeout(() => {
             divOpacar.classList.add("active");
         }, 0);
     }
+
+    body.classList.add("opacado");
+    divFormAñadir.showModal();
+    divFormAñadir.classList.add("active");
 }
 
 //Añadir nueva entrada al diario
 function añadirEntradaAluFinal() {
+    const body = document.body;
     const divFormAñadir = document.getElementById("divAñadir");
     const divOpacar = document.getElementById("opacar");
     let fecha = document.getElementById("fechaIn").value;
@@ -212,35 +291,49 @@ function añadirEntradaAluFinal() {
         tr.appendChild(td);
     }
     elementoInsertar.prepend(tr);
-    divFormAñadir.classList='';
-    divOpacar.classList='';
+
+
+    divFormAñadir.close();
+    divFormAñadir.classList.remove("active");
+    divOpacar.classList = '';
+    body.classList.remove("opacado");
 }
 
 //Cerrar formulario de nueva entrada
 function cerrarFormAñadirAlu() {
     const divFormAñadir = document.getElementById("divAñadir");
     const divOpacar = document.getElementById("opacar");
+    const body = document.body;
 
-    if (divFormAñadir.classList.contains("active") && divOpacar.classList.contains("active")) {
-        divFormAñadir.classList = "";
-        divOpacar.classList = "";
-    }
+    divFormAñadir.close();
+    divFormAñadir.classList.remove("active");
+    body.classList.remove("opacado");
+    divOpacar.classList = "";
 }
 
 //Eliminar entrada diario
 function borrarRegistroAlu() {
-    let checkBoxs = document.querySelectorAll("input[type='checkbox']");
+    const checkBoxs = document.querySelectorAll("input[type='checkbox']");
+    let filaBorrar;
+
     for (let i = 0; i < checkBoxs.length; i++) {
         if (checkBoxs[i].checked) {
-            let filaBorrar = document.getElementById(checkBoxs[i].id + "tr");
-            filaBorrar.remove();
+            filaBorrar = document.getElementById(checkBoxs[i].id + "tr");
         }
+    }
+
+    if (filaBorrar) {
+        filaBorrar.remove();
+    } else {
+        alert("Seleccione el check de la entrada que desea eliminar");
     }
 }
 
 //Abrir formulario para editar entrada diario
 function abrirEditarRegAlu() {
-    let checkBoxs = document.querySelectorAll("input[type='checkbox']");
+    const body = document.body;
+    const dialogEditar = document.querySelector("#mainContenidoAlu #divActualizar");
+    const checkBoxs = document.querySelectorAll("input[type='checkbox']");
     const formActualizar = document.querySelector("#divActualizar form")
     formActualizar.innerHTML = "";
     const divOpacar = document.getElementById("opacar");
@@ -259,35 +352,37 @@ function abrirEditarRegAlu() {
             }
         }
     }
+    if (filaActualizar) {
+        for (let i = 1; i < filaActualizar.childNodes.length; i++) {
+            let input = document.createElement("input");
+            input.type = "text";
+            input.value = filaActualizar.childNodes[i].innerText;
+            formActualizar.appendChild(input);
+        }
 
-    for (let i = 1; i < filaActualizar.childNodes.length; i++) {
-        let input = document.createElement("input");
-        input.type = "text";
-        input.value = filaActualizar.childNodes[i].innerText;
-        formActualizar.appendChild(input);
-    }
+        buttonActualizar.type = "button";
+        buttonActualizar.setAttribute("onclick", "editarRegAluFinal()");
+        formActualizar.id = filaActualizar.id + "F";
+        formActualizar.appendChild(buttonActualizar);
 
-    buttonActualizar.type = "button";
-    buttonActualizar.setAttribute("onclick", "editarRegAluFinal()");
-    formActualizar.id = filaActualizar.id + "F";
-    formActualizar.appendChild(buttonActualizar);
+        if (!divOpacar.classList.contains("active")) {
+            divOpacar.classList.add("block");
+            setTimeout(() => {
+                divOpacar.classList.add("active");
+            }, 0);
+        }
+        body.classList.add("opacado");
+        dialogEditar.showModal();
 
-    if (!divOpacar.classList.contains("active")) {
-        divOpacar.classList.add("block");
-        setTimeout(() => {
-            divOpacar.classList.add("active");
-        }, 0);
-    }
-
-    divActualizar.classList.add("block");
-
-    setTimeout(() => {
         divActualizar.classList.add("active");
-    }, 0);
+    } else {
+        alert("Seleccione el check de la entrada que desea modificar");
+    }
 }
 
 //Editar entrada del diario
 function editarRegAluFinal() {
+    const body = document.body;
     const divFormAñadir = document.getElementById("divActualizar");
     const divOpacar = document.getElementById("opacar");
     let inputsActualizar = document.querySelectorAll("#divActualizar form input");
@@ -307,19 +402,22 @@ function editarRegAluFinal() {
         filaActualizarOk.childNodes[i].textContent = valuesInputs[contador];
         contador++;
     }
-    divFormAñadir.classList='';
-    divOpacar.classList='';
+    divFormAñadir.close();
+    divFormAñadir.classList.remove("active");
+    divOpacar.classList = '';
+    body.classList.remove("opacado");
 }
 
 //Cerrar formulario editar entrada diario
 function cerrarFormReg() {
-    const divActualizar = document.getElementById("divActualizar");
+    const dialogActualizar = document.getElementById("divActualizar");
     const divOpacar = document.getElementById("opacar");
+    const body = document.body;
 
-    if (divActualizar.classList.contains("active") && divOpacar.classList.contains("active")) {
-        divActualizar.classList = "";
-        divOpacar.classList = "";
-    }
+    dialogActualizar.close();
+    dialogActualizar.classList.remove("active");
+    body.classList.remove("opacado");
+    divOpacar.classList = "";
 }
 
 
@@ -342,24 +440,32 @@ function abrirAñadirAlu(accion) {
             }
         }
 
-        let idFilaAlu = "tr" + idCheckbox;
-        nombAluTabla = document.querySelector(`tr#${idFilaAlu} td.nombre`).innerText;
-        nombAluDiv.value = nombAluTabla;
-        boton.classList = "";
-        boton.innerText = "Editar alumno";
-        boton.addEventListener("click", añadirEditarAlumnoProf);
+        if (idCheckbox) {
+            console.log("lol");
+            let idFilaAlu = "tr" + idCheckbox;
+            nombAluTabla = document.querySelector(`tr#${idFilaAlu} td.nombre`).innerText;
+            nombAluDiv.value = nombAluTabla;
+            boton.classList = "";
+            boton.innerText = "Editar alumno";
+            boton.addEventListener("click", añadirEditarAlumnoProf);
+            divFormAñadir.classList.toggle("block");
+        } else {
+            alert("Seleccione el check del alumno que desea modificar");
+        }
+
 
     } else if (accion === "añadir") {
 
         boton.classList = "";
         boton.innerText = "Añadir alumno";
         boton.addEventListener("click", añadirEditarAlumnoProf);
+        divFormAñadir.classList.toggle("block");
 
     } else if (accion === "ver") {
         document.getElementById("añadirEditarAlu").classList.add("none");
+        divFormAñadir.classList.toggle("block");
     }
 
-    divFormAñadir.classList.toggle("block");
 
     setTimeout(() => {
         divFormAñadir.classList.add("active");
@@ -415,12 +521,21 @@ function añadirEditarAlumnoProf() {
 //Eliminar alumno
 function borrarRegistroProf() {
     let checkBoxs = document.querySelectorAll("input[type='checkbox']");
+    let filaBorrar;
+
     for (let i = 0; i < checkBoxs.length; i++) {
         if (checkBoxs[i].checked) {
-            let filaBorrar = document.getElementById("tr" + checkBoxs[i].id);
-            filaBorrar.remove();
+            filaBorrar = document.getElementById("tr" + checkBoxs[i].id);
+
         }
     }
+    if (filaBorrar) {
+        filaBorrar.remove();
+    } else {
+        alert("Seleccione el check del alumno que desea eliminar");
+    }
+
+
 }
 
 //Sistema de pestañas tanto del portal profesor como del alumno
@@ -446,4 +561,62 @@ function pestañas(pestañaMostrar) {
         pestañaActiva.classList.add("active")
     }
 
+}
+
+//Función para cerrar el dialog de la pestaña de empresas del portal del profesor
+function cerrarDialogProf(dialog) {
+    const body = document.body;
+    const divOpacar = document.getElementById("opacar");
+
+    dialog.close();
+    body.classList.remove("opacado");
+    divOpacar.classList = "";
+}
+
+//Función para asignar una nueva empresa a los alumnos de la tabla
+function asignarEmpresaProf() {
+    const alumno = document.querySelector("#empresasProf select#selectAlu");
+    const celdasTabla = document.querySelectorAll("#empresasProf #empresasAsignadas table tbody tr td");
+    const selectEmpresas = document.querySelector("#empresasProf select#selectEmpr");
+    let empresaSeleccionada = document.querySelector(`#empresasProf select#selectEmpr option[value=${selectEmpresas.value}]`);
+
+    celdasTabla.forEach((celda) => {
+        if (celda.id === alumno.value) {
+            celda.nextElementSibling.innerHTML = empresaSeleccionada.innerHTML;
+        }
+    });
+
+}
+
+//Función para ver o editar empresas, según el botón que el usuario seleccione
+function verEditarEmpresa(tipo = "ver") {
+    const dialogVerEditar = document.querySelector("#heroVistaProfesor #empresasProf #infoEmpresas dialog#editarVerEmrpesa");
+    const divOpacar = document.getElementById("opacar");
+    const body = document.body;
+    let btnEditar = dialogVerEditar.querySelector("form > button");
+
+    body.classList.add("opacado");
+    divOpacar.classList.add("block");
+
+    setTimeout(() => {
+        divOpacar.classList.add("active");
+    }, 0);
+
+
+    if (tipo == "editar") {
+
+        if (!btnEditar) {
+            let btnElement = document.createElement("button");
+            btnElement.innerHTML = "Editar empresa";
+            const formDialog = dialogVerEditar.querySelector("form");
+            formDialog.appendChild(btnElement);
+        }
+
+        dialogVerEditar.showModal();
+    } else {
+        if (btnEditar) {
+            btnEditar.remove();
+        }
+        dialogVerEditar.showModal();
+    }
 }

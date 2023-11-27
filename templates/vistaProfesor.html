@@ -83,7 +83,7 @@
                         </tbody>
                     </table>
 
-                    <button type="button" data-type="añadir" name="añadirAlu">Añadir Alumno</button>
+                    <button type="button" data-type="añadir" name="añadirAlu"><i class="fa-solid fa-plus"></i>Añadir Alumno</button>
                 </article>
 
                 <article id="infoAlumno">
@@ -317,76 +317,126 @@
             </section>
 
             <section id="empresasProf" class="contenido">
+                <div>
+                    <article id="empresasAsignadas">
+                        <table>
+                            <tr>
+                                <th>Alumno</th>
+                                <th>Empresa asignada</th>
+                            </tr>
+                            <tr>
+                                <td id="alu1">Pedro Domínguez Molina</td>
+                                <td>NTT-DATA</td>
+                            </tr>
+                            <tr>
+                                <td id="alu2">Juan Pérez Navarro</td>
+                                <td>ACCENTURE</td>
+                            </tr>
+                            <tr>
+                                <td id="alu3">Cristian Rama García</td>
+                                <td>VIEWNEXT</td>
+                            </tr>
+                            <tr>
+                                <td id="alu4">Julian Muñoz Maldonado</td>
+                                <td>AVANADE</td>
+                            </tr>
+                            <tr>
+                                <td id="alu5">Sergio Torres Paz</td>
+                                <td>YO PONGO EL HIELO</td>
+                            </tr>
+                        </table>
 
-                <article id="empresasAsignadas">
-                    <table>
-                        <tr>
-                            <th>Alumno</th>
-                            <th>Empresa asignada</th>
-                        </tr>
-                        <tr>
-                            <td>Pedro Domínguez Molina</td>
-                            <td>NTT-DATA</td>
-                        </tr>
-                        <tr>
-                            <td>Juan Pérez Navarro</td>
-                            <td>ACCENTURE</td>
-                        </tr>
-                        <tr>
-                            <td>Cristian Rama García</td>
-                            <td>VIEWNEXT</td>
-                        </tr>
-                        <tr>
-                            <td>Julian Muñoz Maldonado</td>
-                            <td>AVANADE</td>
-                        </tr>
-                        <tr>
-                            <td>Sergio Torres Paz</td>
-                            <td>YO PONGO EL HIELO</td>
-                        </tr>
-                    </table>
+                        <form>
+                            <label for="alu">Seleccione un alumno</label>
+                            <select name="alumnoEm" id="selectAlu">
+                                <option value="alu1">Pedro Domínguez Molina</option>
+                                <option value="alu2">Juan Pérez Navarro</option>
+                                <option value="alu3">Cristian Rama García</option>
+                                <option value="alu4">Julian Muñoz Maldonado</option>
+                                <option value="alu5">Sergio Torres Paz</option>
+                            </select>
 
-                    <form>
-                        <label for="alu">Seleccione un alumno</label>
-                        <select name="alumnoEm" id="alu">
-                            <option value="alu1">Pedro Domínguez Molina</option>
-                            <option value="alu2">Juan Pérez Navarro</option>
-                            <option value="alu3">Cristian Rama García</option>
-                            <option value="alu4">Julian Muñoz Maldonado</option>
-                            <option value="alu5">Sergio Torres Paz</option>
-                        </select>
+                            <label for="empr">Seleccione una empresa</label>
+                            <select name="empresaEm" id="selectEmpr">
+                                <option value="ntt">NTT-DATA</option>
+                                <option value="acc">ACCENTURE</option>
+                                <option value="viewn">VIEWNEXT</option>
+                                <option value="avan">AVANADE</option>
+                                <option value="yph">YO PONGO EL HIELO</option>
+                            </select>
+                            <button type="button">Asignar empresa</button>
+                        </form>
+                    </article>
 
-                        <label for="empr">Seleccione una empresa</label>
-                        <select name="empresaEm" id="empr">
-                            <option value="ntt">NTT-DATA</option>
-                            <option value="acc">ACCENTURE</option>
-                            <option value="viewn">VIEWNEXT</option>
-                            <option value="avan">AVANADE</option>
-                            <option value="yph">YO PONGO EL HIELO</option>
-                        </select>
-                        <button type="button">Asignar empresa</button>
-                    </form>
-                </article>
+                    <article id="infoEmpresas">
+                        <button type="button" data-type="añadir"><i class="fa-solid fa-plus"></i>Añadir nueva empresa</button>
+                        <form>
+                            <label for="empresa">Seleccione la empresa que desea ver o editar</label>
+                            <select name="empresa" id="empresa">
+                                <option value="ntt">NTT-DATA</option>
+                                <option value="acc">ACCENTURE</option>
+                                <option value="viewn">VIEWNEXT</option>
+                                <option value="avan">AVANADE</option>
+                                <option value="yph">YO PONGO EL HIELO</option>
+                            </select>
+                            <div>
+                                <button type="button" data-type="ver"><i class="fa-solid fa-eye"></i>Ver empresa</button>
+                                <button type="button" data-type="editar"><i class="fa-solid fa-pencil"></i>Editar empresa</button>
+                            </div>
+                        </form>
 
-                <article id="infoEmpresas">
-                    <button type="button">Añadir nueva empresa</button>
-                    <form>
-                        <label for="empresa">Seleccione la empresa que desea modificar</label>
-                        <select name="empresa" id="empresa">
-                            <option value="ntt">NTT-DATA</option>
-                            <option value="acc">ACCENTURE</option>
-                            <option value="viewn">VIEWNEXT</option>
-                            <option value="avan">AVANADE</option>
-                            <option value="yph">YO PONGO EL HIELO</option>
-                        </select>
-                        <button type="button">Modificar empresa</button>
-                    </form>
-                </article>
+
+                        <dialog id="nuevaEmpresa">
+                            <button type="button" data-type="cerrar"><i class="fa-solid fa-x"></i></button>
+                            <form method="dialog">
+                                <label for="nombEmp">Nombre empresa</label>
+                                <input type="text" id="nombEmp" name="nombreEmpresa">
+
+                                <label for="dirEmp">Dirección</label>
+                                <input type="text" id="dirEmp" name="direccionEmpresa">
+
+                                <label for="emailEmp">Correo electrónico de contacto</label>
+                                <input type="email" id="emailEmp" name="emailEmpresa">
+
+                                <label for="telEmp">Teléfono de contacto</label>
+                                <input type="tel" id="telEmp" name="tlfEmpresa">
+
+                                <label for="tutEmp">Tutor de empresa</label>
+                                <input type="text" id="tutEmp" name="tutorEmpresa">
+
+                                <button type="button">Añadir empresa</button>
+                            </form>
+                        </dialog>
+
+                        <dialog id="editarVerEmrpesa">
+                            <button type="button" data-type="cerrar"><i class="fa-solid fa-x"></i></button>
+                            <form method="dialog">
+                                <label for="nombEmp">Nombre empresa</label>
+                                <input type="text" id="nombEmp" name="nombreEmpresa" value="NombreEmpresa">
+
+                                <label for="dirEmp">Dirección</label>
+                                <input type="text" id="dirEmp" name="direccionEmpresa" value="C/Direccion, N4, Pol.Industrial Guadalhorce">
+
+                                <label for="emailEmp">Correo electrónico de contacto</label>
+                                <input type="email" id="emailEmp" name="emailEmpresa" value="email@empresa.com">
+
+                                <label for="telEmp">Teléfono de contacto</label>
+                                <input type="tel" id="telEmp" name="tlfEmpresa" value="+34678548965">
+
+                                <label for="tutEmp">Tutor de empresa</label>
+                                <input type="text" id="tutEmp" name="tutorEmpresa" value="Tutor Tutor Tutor">
+
+                                <!-- <button type="button">Añadir empresa</button> -->
+                            </form>
+                        </dialog>
+
+                    </article>
+                </div>
 
             </section>
 
         </section>
-        
+
     </main>
 
     <script type="text/javascript" src="../static/js/app.js"></script>

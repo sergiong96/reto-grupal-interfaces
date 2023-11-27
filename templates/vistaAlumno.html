@@ -38,39 +38,6 @@
 
         <section id="mainContenidoAlu">
 
-            <section id="divAñadir">
-                <button type="button" data-type="cerrar"><i class="fa-solid fa-x"></i></button>
-                <form action="#" method="POST">
-                    <div>
-                        <label for="fechaIn">Fecha</label>
-                        <input type="text" id="fechaIn">
-                    </div>
-                    <div>
-                        <label for="tipoIn">Tipo de práctica</label>
-                        <input type="text" id="tipoIn">
-                    </div>
-                    <div>
-                        <label for="horasIn">Número horas</label>
-                        <input type="text" id="horasIn">
-                    </div>
-                    <div>
-                        <label for="activIn">Actividades realizadas</label>
-                        <input type="text" id="activIn">
-                    </div>
-                    <div>
-                        <label for="obserIn">Observaciones</label>
-                        <input type="text" id="obserIn">
-                    </div>
-                    <button type="button" id="buttonAñadir">Añadir entrada</button>
-                </form>
-            </section>
-
-            <section id="divActualizar">
-                <button type="button" data-type="cerrar"><i class="fa-solid fa-x"></i></button>
-                <form action="#" method="POST">
-                </form>
-            </section>
-
             <section id="seccionTabla" class="contenido active">
                 <div id="botonesEdicion">
                     <div>
@@ -79,7 +46,7 @@
                         <button type="button" data-type="editar" title="Editar registro seleccionado"><i
                                 class="fa-solid fa-pencil"></i></button>
                     </div>
-                    <button id="añadirEntrada" data-type="abrirAñadir"><i class="fa-solid fa-plus"></i>Añadir
+                    <button id="añadirEntrada" data-type="abrirAñadir" title="Añadir nuevo alumno"><i class="fa-solid fa-plus"></i>Añadir
                         entrada</button>
                 </div>
                 <table>
@@ -138,6 +105,40 @@
 
                 </table>
             </section>
+
+            <dialog id="divAñadir">
+                <button type="button" data-type="cerrar"><i class="fa-solid fa-x"></i></button>
+                <form action="#" method="POST">
+                    <div>
+                        <label for="fechaIn">Fecha</label>
+                        <input type="text" id="fechaIn">
+                    </div>
+                    <div>
+                        <label for="tipoIn">Tipo de práctica</label>
+                        <input type="text" id="tipoIn">
+                    </div>
+                    <div>
+                        <label for="horasIn">Número horas</label>
+                        <input type="text" id="horasIn">
+                    </div>
+                    <div>
+                        <label for="activIn">Actividades realizadas</label>
+                        <input type="text" id="activIn">
+                    </div>
+                    <div>
+                        <label for="obserIn">Observaciones</label>
+                        <input type="text" id="obserIn">
+                    </div>
+                    <button type="button" id="buttonAñadir">Añadir entrada</button>
+                </form>
+            </dialog>
+
+            <dialog id="divActualizar">
+                <button type="button" data-type="cerrar"><i class="fa-solid fa-x"></i></button>
+                <p><strong>Entrada del diario</strong></p>
+                <form action="#" method="POST">
+                </form>
+            </dialog>
 
             <section id="horas" class="contenido">
                 <h2>Horas de prácticas:</h2>
