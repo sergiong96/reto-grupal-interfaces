@@ -1,3 +1,4 @@
+@use 'parts/vars';
 @use 'parts/index';
 @use 'parts/alumno';
 @use 'parts/profesor';
@@ -5,7 +6,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('normalize/normalize.css');
 
-/*COMUNES*/
+
+/*ESTILOS COMUNES*/
 * {
     font-family: 'Roboto', sans-serif;
 }
@@ -16,7 +18,7 @@ body.opacado {
 
 header {
     display: flex;
-    background-image: linear-gradient(to bottom, #a8cda8, #5ac05a);
+    background-image: vars.$gradientHeader;
     height: 20vh;
 
     div {

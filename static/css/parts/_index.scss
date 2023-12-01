@@ -1,3 +1,5 @@
+@use 'vars';
+
 #backgroundIMG {
     position: absolute;
     opacity: 50%;
@@ -22,7 +24,7 @@
         border: 1px solid black;
         border-radius: 0.5rem;
         padding: 2rem;
-        background-color: #a8cda8;
+        background-color: vars.$verdeForm;
 
         input {
             margin-bottom: 1rem;
@@ -68,7 +70,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(to bottom, #64c464, #48c548);
+    background-image: vars.$gradientFooter;
     height: 5vh;
     color: #fff;
 }

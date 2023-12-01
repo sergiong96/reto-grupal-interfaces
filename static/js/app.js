@@ -28,6 +28,8 @@ const btnCerrarAñadir = document.querySelector("#infoEmpresas dialog#nuevaEmpre
 const btnAsignarEmpresa = document.querySelector("#heroVistaProfesor #empresasAsignadas form button");
 const btnVerEditarEmpresa = document.querySelectorAll("#empresasProf #infoEmpresas > form > div button");
 const btnCerrarDialogEmpresa = document.querySelector("#infoEmpresas #editarVerEmrpesa button[data-type='cerrar']");
+const btnDialogAddEmpresa = document.querySelector("#nuevaEmpresa > form > button");
+const btnDialogEditEmpresa = document.querySelector("#editarVerEmrpesa > form > button");
 
 
 /*EVENTOS*/
@@ -211,6 +213,16 @@ if (btnCerrarDialogEmpresa) {
     });
 }
 
+//Evento botón dialog añadir empresa, cierra el dialog
+if (btnDialogAddEmpresa) {
+    btnDialogAddEmpresa.addEventListener("click", () => {
+        const dialogAñadir = document.querySelector("#empresasProf #infoEmpresas dialog#nuevaEmpresa");
+        cerrarDialogProf(dialogAñadir);
+    });
+}
+
+
+
 
 /*FUNCIONES*/
 /*Funciones Index*/
@@ -323,7 +335,9 @@ function borrarRegistroAlu() {
     }
 
     if (filaBorrar) {
-        filaBorrar.remove();
+        if (confirm("¿Desea eliminar la entrada " + filaBorrar.id + "?")) {
+            filaBorrar.remove();
+        }
     } else {
         alert("Seleccione el check de la entrada que desea eliminar");
     }
@@ -530,11 +544,12 @@ function borrarRegistroProf() {
         }
     }
     if (filaBorrar) {
-        filaBorrar.remove();
+        if (confirm("¿Desea eliminar al alumno " + filaBorrar.id + "?")) {
+            filaBorrar.remove();
+        }
     } else {
         alert("Seleccione el check del alumno que desea eliminar");
     }
-
 
 }
 
@@ -607,6 +622,8 @@ function verEditarEmpresa(tipo = "ver") {
 
         if (!btnEditar) {
             let btnElement = document.createElement("button");
+            btnElement.type = "button";
+            btnElement.addEventListener("click", () => cerrarDialogEdit())
             btnElement.innerHTML = "Editar empresa";
             const formDialog = dialogVerEditar.querySelector("form");
             formDialog.appendChild(btnElement);
@@ -619,4 +636,14 @@ function verEditarEmpresa(tipo = "ver") {
         }
         dialogVerEditar.showModal();
     }
+}
+
+//Cierra el dialog al pulsar en editar empresa
+function cerrarDialogEdit() {
+    const dialogEditar = document.querySelector("dialog#editarVerEmrpesa");
+    const divOpacar = document.getElementById("opacar");
+    const body = document.body;
+    divOpacar.classList = "";
+    body.classList.remove("opacado");
+    dialogEditar.close();
 }
